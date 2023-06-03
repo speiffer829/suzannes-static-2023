@@ -1,4 +1,5 @@
 ---
+import Menu from '$src/components/Menu.astro';
 import '../styles/styles.css';
 export interface Props {
 	title?: string;
@@ -15,13 +16,16 @@ const { title = "Suzanne's Dance" } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;1,200&family=Poppins:wght@500;700;900&display=swap"
+			rel="stylesheet"
+		/>
 		<title>{title === "Suzanne's Dance" ? "Suzanne's Dance" : `${title} | Suzanne's Dance`}</title>
 	</head>
 	<body>
-		<nav>
-			<a href="/">Home</a>
-			<a href="/about">About</a>
-		</nav>
+		<Menu />
 		<slot />
 	</body>
 </html>

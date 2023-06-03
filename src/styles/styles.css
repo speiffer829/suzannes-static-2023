@@ -2,8 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
 @layer components {
-	h1 {
-		@apply text-7xl text-blue-600;
+	body {
+		font-family: theme('fontFamily.primary');
+	}
+
+	.wrapper {
+		max-width: theme('maxWidth.screen-2xl');
+		margin: 0 auto;
+		padding: 0 theme('spacing.4');
 	}
 }
