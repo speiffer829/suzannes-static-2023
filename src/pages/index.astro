@@ -1,9 +1,16 @@
 ---
 import Layout from '$src/layouts/Layout.astro';
+import { Picture } from '@astrojs/image/components';
 ---
 
 <Layout>
-	<main>
-		<h1 class="text-pink-300">Home</h1>
-	</main>
+	<header>
+		<Picture
+			src="/imgs/snapping.jpg"
+			alt="Two girls dancing."
+			aspectRatio={16 / 9}
+			widths={[400, 800, 1200, 1600]}
+		/>
+	</header>
+	<main></main>
 </Layout>
