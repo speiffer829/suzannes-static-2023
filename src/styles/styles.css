@@ -8,7 +8,7 @@
 	box-sizing: border-box;
 }
 
-@layer components {
+@layer base {
 	body {
 		font-family: theme('fontFamily.primary');
 		overflow-x: hidden;
@@ -20,4 +20,34 @@
 		margin: 0 auto;
 		padding: 0 theme('spacing.4');
 	}
+
+	.hero {
+		background-color: theme('colors.pink.500');
+		background: var(--bg-img) center no-repeat fixed;
+		background-size: cover;
+		min-height: 90vh;
+		width: 100%;
+	}
+
+	.btn {
+		background-color: theme('colors.pink.500');
+		color: theme('colors.white');
+		padding: theme('spacing.2') theme('spacing.4');
+		border-radius: theme('borderRadius.md');
+		transition: all 3ms ease-in-out;
+		display: flex;
+		width: fit-content;
+		border: 2px solid theme('colors.pink.500');
+		transition: all 250ms ease-in-out;
+
+		&:hover {
+			background-color: theme('colors.pink.100');
+			color: theme('colors.pink.500');
+		}
+	}
+}
+
+::selection {
+	background-color: theme('colors.rose.500');
+	color: theme('colors.white');
 }

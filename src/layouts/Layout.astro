@@ -41,7 +41,9 @@ const { title = "Suzanne's Dance" } = Astro.props;
 		<title>{title === "Suzanne's Dance" ? "Suzanne's Dance" : `${title} | Suzanne's Dance`}</title>
 	</head>
 	<body>
-		<Menu />
+		<header>
+			<Menu />
+		</header>
 		<slot />
 	</body>
 </html>
