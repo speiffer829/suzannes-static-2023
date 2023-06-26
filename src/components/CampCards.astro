@@ -2,7 +2,7 @@
 import dates from '$src/dates.json';
 ---
 
-<div class="wrapper grid lg:grid-cols-3 gap-12">
+<div class="wrapper grid md:grid-cols-3 gap-3">
 	<article class="camp-card">
 		<p class="dates">
 			{dates.senior_1.start_month}
@@ -34,7 +34,7 @@ import dates from '$src/dates.json';
 				>
 			</div>
 
-			<h3>Senior Camp #1</h3>
+			<h3>{dates.year} Senior Camp #1</h3>
 			<p class="ages">2nd Grade And Up</p>
 			<a
 				href="/camp"
@@ -75,7 +75,7 @@ import dates from '$src/dates.json';
 							y2="10"></line></svg
 					>
 				</div>
-				<h3>Senior Camp #2</h3>
+				<h3>{dates.year} Senior Camp #2</h3>
 				<p class="ages">2nd Grade And Up</p>
 			</div>
 			<a
@@ -116,7 +116,7 @@ import dates from '$src/dates.json';
 							y2="10"></line></svg
 					>
 				</div>
-				<h3>Senior Camp #1</h3>
+				<h3>{dates.year} Senior Camp #1</h3>
 				<p class="ages">2nd Grade And Up</p>
 			</div>
 			<a
@@ -157,7 +157,7 @@ import dates from '$src/dates.json';
 		}
 
 		box-shadow: theme('boxShadow.md');
-		border-radius: theme('borderRadius.xl');
+		border-radius: theme('borderRadius.DEFAULT');
 		background-color: theme('colors.white');
 		overflow: hidden;
 		container-type: inline-size;

@@ -32,8 +32,8 @@
 	.btn {
 		background-color: theme('colors.pink.500');
 		color: theme('colors.white');
-		padding: theme('spacing.2') theme('spacing.4');
-		border-radius: theme('borderRadius.md');
+		padding: theme('spacing.3') theme('spacing.10');
+		border-radius: theme('borderRadius.full');
 		transition: all 3ms ease-in-out;
 		display: flex;
 		width: fit-content;
@@ -42,7 +42,7 @@
 
 		&:hover {
 			background-color: theme('colors.pink.100');
-			color: theme('colors.pink.500');
+			color: theme('colors.pink.600');
 		}
 	}
 }
