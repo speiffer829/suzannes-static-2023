@@ -45,6 +45,10 @@
 			color: theme('colors.pink.600');
 		}
 	}
+
+	.card {
+		@apply bg-white shadow-lg rounded-xl overflow-hidden;
+	}
 }
 
 ::selection {

@@ -1,8 +1,6 @@
 ---
 import CampCards from '$src/components/CampCards.astro';
 import Layout from '$src/layouts/Layout.astro';
-import dates from '$src/dates.json';
-import { Image } from 'astro:assets';
 ---
 
 <Layout>
@@ -76,64 +74,112 @@ import { Image } from 'astro:assets';
 			</div>
 		</div>
 	</header>
+
 	<main class="bg-pink-50">
-		<section class="pt-3">
-			<div class="wrapper grid md:grid-cols-2 gap-3">
-				<atricle class="bg-white flex flex-col shadow-lg rounded overflow-hidden">
+		<div class="grid md:grid-cols-12 gap-3 py-3 wrapper">
+			<article id="classes" class="card md:col-span-6">
+				<a
+					href="https://www.google.com/maps/place/Suzanne's+Dance+%26+Gymnastic's/@40.3509668,-76.3997132,18z/data=!4m2!3m1!1s0x89c6030624df1d39:0xce5d55a8063d8861"
+					target="__blank"
+					class="flex-grow-0 flex-shrink w-full"
+				>
+					<img
+						class="w-full object-cover object-center block max-h-52"
+						src="/imgs/snapping.webp"
+						alt="Map"
+						loading="lazy"
+					/>
+				</a>
+				<div class="p-4 text-center flex flex-col justify-center flex-1 py-8 px-4">
+					<h3 class="text-4xl font-bold">Find Us</h3>
+					<address class="mt-2 md:text-lg">717 N 8th Ave, Lebanon PA 17042</address>
 					<a
 						href="https://www.google.com/maps/place/Suzanne's+Dance+%26+Gymnastic's/@40.3509668,-76.3997132,18z/data=!4m2!3m1!1s0x89c6030624df1d39:0xce5d55a8063d8861"
-						target="__blank"
-						class="flex-grow-0 flex-shrink w-full"
-					>
-						<img
-							class="w-full object-cover object-center block max-h-52"
-							src="/imgs/map.webp"
-							alt="Map"
-							loading="lazy"
-						/>
+						target="_blank"
+						class="btn mx-auto bg-pink-500 hover:bg-pink-100 hover:text-pink-600 border-pink-500 mt-12 flex items-center gap-2"
+						>Learn More
 					</a>
+				</div>
+			</article>
 
-					<div class="p-4 text-center flex flex-col justify-center flex-1 py-8 px-4">
-						<h3 class="text-4xl font-bold">Find Us</h3>
-						<address class="mt-2 md:text-lg">717 N 8th Ave, Lebanon PA 17042</address>
-						<a
-							href="https://www.google.com/maps/place/Suzanne's+Dance+%26+Gymnastic's/@40.3509668,-76.3997132,18z/data=!4m2!3m1!1s0x89c6030624df1d39:0xce5d55a8063d8861"
-							target="_blank"
-							class="btn mx-auto bg-emerald-500 hover:bg-emerald-100 hover:text-emerald-600 border-emerald-500 mt-12 flex items-center gap-2"
-							>Open Google Maps
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="20"
-								height="20"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								class="lucide lucide-external-link"
-								><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline
-									points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"
-								></line></svg
-							>
-						</a>
-					</div>
-				</atricle>
-
-				<article
-					class="bg-white rounded shadow-lg bg-cover bg-no-repeat bg-center flex justify-center items-center relative aspect-square md:aspect-auto @container"
-					style="background-image: url('/imgs/maybe_merch.webp');"
+			<article id="bus" class="card md:col-span-6">
+				<a
+					href="https://www.google.com/maps/place/Suzanne's+Dance+%26+Gymnastic's/@40.3509668,-76.3997132,18z/data=!4m2!3m1!1s0x89c6030624df1d39:0xce5d55a8063d8861"
+					target="__blank"
+					class="flex-grow-0 flex-shrink w-full"
 				>
-					<div class="w-fit">
-						<h3 class="spray_gradient text-center text-5xl @sm:text-6xl">Merch</h3>
-						<a href="/merch" class="btn mt-5">View Merch</a>
-					</div>
-				</article>
-			</div>
-		</section>
-		<section id="camp_dates" class="py-3">
-			<CampCards />
-		</section>
+					<img
+						class="w-full object-cover object-center block max-h-52"
+						src="/imgs/bus.webp"
+						alt="Map"
+						loading="lazy"
+					/>
+				</a>
+				<div class="p-4 text-center flex flex-col justify-center flex-1 py-8 px-4">
+					<h3 class="text-4xl font-bold">Find Us</h3>
+					<address class="mt-2 md:text-lg">717 N 8th Ave, Lebanon PA 17042</address>
+					<a
+						href="https://www.google.com/maps/place/Suzanne's+Dance+%26+Gymnastic's/@40.3509668,-76.3997132,18z/data=!4m2!3m1!1s0x89c6030624df1d39:0xce5d55a8063d8861"
+						target="_blank"
+						class="btn mx-auto bg-sky-500 hover:bg-sky-100 hover:text-sky-600 border-sky-500 mt-12 flex items-center gap-2"
+						>Learn More
+					</a>
+				</div>
+			</article>
+
+			<atricle class="card flex flex-col md:col-span-6" id="map">
+				<a
+					href="https://www.google.com/maps/place/Suzanne's+Dance+%26+Gymnastic's/@40.3509668,-76.3997132,18z/data=!4m2!3m1!1s0x89c6030624df1d39:0xce5d55a8063d8861"
+					target="__blank"
+					class="flex-grow-0 flex-shrink w-full"
+				>
+					<img
+						class="w-full object-cover object-center block max-h-52"
+						src="/imgs/map.webp"
+						alt="Map"
+						loading="lazy"
+					/>
+				</a>
+				<div class="p-4 text-center flex flex-col justify-center flex-1 py-8 px-4">
+					<h3 class="text-4xl font-bold">Find Us</h3>
+					<a href="tel:7172722159" class="text-lg mb-2 mt-4" aria-label="7 1 7. 2 7 2. 2 1 5 9."
+						>(717) 272-2159</a
+					>
+					<address class="md:text-lg">717 N 8th Ave, Lebanon PA 17042</address>
+					<a
+						href="https://www.google.com/maps/place/Suzanne's+Dance+%26+Gymnastic's/@40.3509668,-76.3997132,18z/data=!4m2!3m1!1s0x89c6030624df1d39:0xce5d55a8063d8861"
+						target="_blank"
+						class="btn mx-auto bg-emerald-500 hover:bg-emerald-100 hover:text-emerald-600 border-emerald-500 mt-12 flex items-center gap-2"
+						>Open Google Maps
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="20"
+							height="20"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="lucide lucide-external-link"
+							><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline
+								points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg
+						>
+					</a>
+				</div>
+			</atricle>
+
+			<article
+				class="card bg-cover bg-no-repeat bg-center flex justify-center items-center relative aspect-square md:aspect-auto @container md:col-span-6"
+				style="background-image: url('/imgs/maybe_merch.webp');"
+			>
+				<div class="w-fit">
+					<h3 class="spray_gradient text-center text-5xl @sm:text-6xl">Merch</h3>
+					<a href="/merch" class="btn mt-5">View Merch</a>
+				</div>
+			</article>
+			<CampCards classes={['md:col-span-4']} />
+		</div>
 	</main>
 </Layout>
 
