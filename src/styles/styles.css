@@ -11,8 +11,13 @@
 @layer base {
 	body {
 		font-family: theme('fontFamily.primary');
-		overflow-x: hidden;
 		min-height: 100dvh;
+		padding-top: 120px;
+	}
+
+	img {
+		width: max(auto, 100%);
+		display: block;
 	}
 
 	.wrapper {
@@ -23,10 +28,17 @@
 
 	.hero {
 		background-color: theme('colors.pink.500');
-		background: var(--bg-img) center no-repeat fixed;
+		background: linear-gradient(to bottom right, theme('colors.pink.500'), theme('colors.sky.600')),
+			var(--bg-img) center no-repeat;
+		background-blend-mode: color;
 		background-size: cover;
-		min-height: 90vh;
+		min-height: 50vh;
 		width: 100%;
+
+		@screen lg {
+			min-height: 70vh;
+			background-attachment: fixed;
+		}
 	}
 
 	.btn {
@@ -48,6 +60,18 @@
 
 	.card {
 		@apply bg-white shadow-lg rounded-xl overflow-hidden;
+	}
+
+	.gradient_text {
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+
+		&::selection {
+			background-color: theme('colors.rose.500');
+			color: theme('colors.white');
+			-webkit-text-fill-color: initial;
+			-webkit-background-clip: initial;
+		}
 	}
 }
 

@@ -1,0 +1,77 @@
+---
+import Layout from '$src/layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+export async function getStaticPaths() {
+	const blog_entries = await getCollection('blog');
+	return blog_entries.map((entry) => ({ params: { slug: entry.slug }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={entry.data.title}>
+	<article class="wrapper blog_wrapper">
+		{
+			entry.data.img && (
+				<div class="mt-0">
+					<img src={entry.data.img} alt={entry.data.title} />
+				</div>
+			)
+		}
+		<h1 class="gradient_text bg-gradient-to-br from-pink-400 to-rose-600">{entry.data.title}</h1>
+		<Content />
+	</article>
+</Layout>
+
+<style is:global>
+	.blog_wrapper {
+		font-size: theme('fontSize.base');
+
+		@screen lg {
+			font-size: theme('fontSize.lg');
+		}
+
+		* {
+			max-width: 800px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		img,
+		*:has(img) {
+			@media (min-width: 768px) {
+				max-width: 960px;
+			}
+		}
+		img {
+			border-radius: theme('borderRadius.lg');
+			box-shadow: theme('boxShadow.lg');
+			display: block;
+			margin: theme('spacing.6') auto;
+			width: 100%;
+		}
+
+		h1 {
+			font-size: theme('fontSize.5xl');
+			margin-bottom: theme('spacing.6');
+			font-weight: theme('fontWeight.bold');
+			border-bottom: solid 2px theme('colors.pink.600');
+			font-style: italic;
+		}
+
+		h2 {
+			font-size: theme('fontSize.3xl');
+			margin-bottom: theme('spacing.3');
+			margin-top: theme('spacing.10');
+			font-weight: theme('fontWeight.bold');
+			font-style: italic;
+			color: theme('colors.pink.600');
+		}
+
+		p {
+			margin-bottom: theme('spacing.6');
+			line-height: 2;
+		}
+	}
+</style>

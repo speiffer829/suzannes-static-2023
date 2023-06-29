@@ -40,10 +40,16 @@ const { title = "Suzanne's Dance" } = Astro.props;
 		/>
 		<title>{title === "Suzanne's Dance" ? "Suzanne's Dance" : `${title} | Suzanne's Dance`}</title>
 	</head>
-	<body>
+	<body class="bg-pink-50 pt">
 		<header>
 			<Menu />
 		</header>
 		<slot />
+
+		<footer class="text-pink-500 py-4 bg-pink-50">
+			<div class="wrapper">
+				<p class="text-center">©2023 Suzanne's Dance And Gymnastics</p>
+			</div>
+		</footer>
 	</body>
 </html>

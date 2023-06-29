@@ -1,129 +1,88 @@
 ---
 import CampCards from '$src/components/CampCards.astro';
 import Layout from '$src/layouts/Layout.astro';
+import { Picture } from '@astrojs/image/components';
 ---
 
 <Layout>
-	<header style="--bg-img: url('/imgs/snapping.webp')" class="hero flex flex-col justify-end">
-		<div class="w-full bg-pink-400/75 backdrop-blur-lg py-6">
-			<div class="wrapper grid grid-cols-3 gap-8 text-white main-ctas">
-				<a href="/jumpin-jitney">
-					<span class="icon">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="100"
-							height="100"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="2"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							class="lucide lucide-bus"
-							><path
-								d="M19 17h2l.64-2.54c.24-.959.24-1.962 0-2.92l-1.07-4.27A3 3 0 0 0 17.66 5H4a2 2 0 0 0-2 2v10h2"
-							></path><path d="M14 17H9"></path><circle cx="6.5" cy="17.5" r="2.5"></circle><circle
-								cx="16.5"
-								cy="17.5"
-								r="2.5"></circle></svg
-						>
-					</span>
-					<span class="text-center text-2xl block mt-5 font-bold">Jumpin' Jitney</span>
-				</a>
-				<a href="/classes">
-					<span class="icon">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="100"
-							height="100"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="2"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							class="lucide lucide-person-standing"
-							><circle cx="12" cy="5" r="1"></circle><path d="m9 20 3-6 3 6"></path><path
-								d="m6 8 6 2 6-2"></path><path d="M12 10v4"></path></svg
-						>
-					</span>
-					<span class="text-center text-2xl block mt-5 font-bold">Classes</span>
-				</a>
-				<a href="/parties">
-					<span class="icon">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="100px"
-							height="100px"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="2"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							class="lucide lucide-cake"
-							><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"></path><path
-								d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"></path><path d="M2 21h20"
-							></path><path d="M7 8v2"></path><path d="M12 8v2"></path><path d="M17 8v2"
-							></path><path d="M7 4h.01"></path><path d="M12 4h.01"></path><path d="M17 4h.01"
-							></path></svg
-						>
-					</span>
-					<span class="text-center text-2xl block mt-5 font-bold">Parties</span>
-				</a>
-			</div>
+	<header style="--bg-img: url('/imgs/holding.webp')" class="flex flex-col justify-end bg-pink-50">
+		<div class="wrapper">
+			<Picture
+				class="rounded-xl object-cover object-center aspect-square sm:aspect-video xl:aspect-[16/6] shadow-lg"
+				src="/imgs/holding.webp"
+				alt="Girls holing one another and smiling"
+				widths={[400, 800, 1550, 2000]}
+				formats={['avif', 'webp']}
+				aspectRatio="2000:1333"
+			/>
 		</div>
 	</header>
 
 	<main class="bg-pink-50">
-		<div class="grid md:grid-cols-12 gap-3 py-3 wrapper">
-			<article id="classes" class="card md:col-span-6">
-				<a
-					href="https://www.google.com/maps/place/Suzanne's+Dance+%26+Gymnastic's/@40.3509668,-76.3997132,18z/data=!4m2!3m1!1s0x89c6030624df1d39:0xce5d55a8063d8861"
-					target="__blank"
-					class="flex-grow-0 flex-shrink w-full"
+		<div class="grid md:grid-cols-12 gap-6 py-6 wrapper">
+			<article id="class" class="card md:col-span-6 flex flex-col">
+				<div
+					class="after:content-[''] relative after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-gradient-to-br from-pink-500/30 to-rose-300/50 after:bg-blend-multiply"
 				>
 					<img
-						class="w-full object-cover object-center block max-h-52"
+						class="w-full object-cover object-center h-80 grayscale"
 						src="/imgs/snapping.webp"
 						alt="Map"
 						loading="lazy"
 					/>
-				</a>
-				<div class="p-4 text-center flex flex-col justify-center flex-1 py-8 px-4">
-					<h3 class="text-4xl font-bold">Find Us</h3>
-					<address class="mt-2 md:text-lg">717 N 8th Ave, Lebanon PA 17042</address>
+				</div>
+
+				<div class="p-4 text-center flex flex-[2] flex-col justify-center py-8 px-4">
+					<h3 class="text-4xl font-bold">Classes</h3>
+					<a href="/classes" class="btn mx-auto mt-6 flex items-center gap-2">Learn More</a>
+				</div>
+			</article>
+			<article id="bus" class="card md:col-span-6 flex flex-col">
+				<div
+					class="after:content-[''] relative after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-gradient-to-br from-pink-500/30 to-sky-500/50 after:bg-blend-multiply"
+				>
+					<img
+						class="w-full object-cover object-center h-80 grayscale"
+						src="/imgs/multibarhang.webp"
+						alt="Map"
+						loading="lazy"
+					/>
+				</div>
+
+				<div class="p-4 text-center flex flex-[2] flex-col justify-center py-8 px-4">
+					<h3 class="text-4xl font-bold">Jumpin' Jitney</h3>
 					<a
-						href="https://www.google.com/maps/place/Suzanne's+Dance+%26+Gymnastic's/@40.3509668,-76.3997132,18z/data=!4m2!3m1!1s0x89c6030624df1d39:0xce5d55a8063d8861"
-						target="_blank"
-						class="btn mx-auto bg-pink-500 hover:bg-pink-100 hover:text-pink-600 border-pink-500 mt-12 flex items-center gap-2"
+						href="/jumpin-jitney"
+						class="btn mx-auto bg-sky-500 hover:bg-sky-100 hover:text-sky-600 border-sky-500 mt-6 flex items-center gap-2"
 						>Learn More
 					</a>
 				</div>
 			</article>
 
-			<article id="bus" class="card md:col-span-6">
+			<article
+				class="card col-span-full px-4 py-6 md:flex justify-between items-center bg-gradient-to-b from-violet-200 to-violet-100 flex-wrap"
+			>
+				<h2 class="font-bold text-3xl text-center md:text-left">
+					🎈<span class="gradient_text bg-gradient-to-br from-purple-500 to-rose-400"
+						>Suzanne's Does Parties Too!</span
+					> 🎉
+				</h2>
 				<a
-					href="https://www.google.com/maps/place/Suzanne's+Dance+%26+Gymnastic's/@40.3509668,-76.3997132,18z/data=!4m2!3m1!1s0x89c6030624df1d39:0xce5d55a8063d8861"
-					target="__blank"
-					class="flex-grow-0 flex-shrink w-full"
+					href="/parties"
+					class="btn bg-purple-400 border-purple-400 hover:bg-purple-100 hover:text-purple-600 mt-5 mx-auto md:m-0"
+					>Learn More</a
 				>
-					<img
-						class="w-full object-cover object-center block max-h-52"
-						src="/imgs/bus.webp"
-						alt="Map"
-						loading="lazy"
-					/>
-				</a>
-				<div class="p-4 text-center flex flex-col justify-center flex-1 py-8 px-4">
-					<h3 class="text-4xl font-bold">Find Us</h3>
-					<address class="mt-2 md:text-lg">717 N 8th Ave, Lebanon PA 17042</address>
-					<a
-						href="https://www.google.com/maps/place/Suzanne's+Dance+%26+Gymnastic's/@40.3509668,-76.3997132,18z/data=!4m2!3m1!1s0x89c6030624df1d39:0xce5d55a8063d8861"
-						target="_blank"
-						class="btn mx-auto bg-sky-500 hover:bg-sky-100 hover:text-sky-600 border-sky-500 mt-12 flex items-center gap-2"
-						>Learn More
-					</a>
+			</article>
+
+			<CampCards classes={['md:col-span-4']} />
+
+			<article
+				class="card bg-cover bg-no-repeat bg-center flex justify-center items-center relative aspect-square md:aspect-auto @container md:col-span-6"
+				style="background-image: url('/imgs/maybe_merch.webp');"
+			>
+				<div class="w-fit">
+					<h3 class="spray_gradient gradient_text text-center text-5xl @sm:text-6xl">Merch</h3>
+					<a href="/merch" class="btn mt-5">View Merch</a>
 				</div>
 			</article>
 
@@ -168,17 +127,6 @@ import Layout from '$src/layouts/Layout.astro';
 					</a>
 				</div>
 			</atricle>
-
-			<article
-				class="card bg-cover bg-no-repeat bg-center flex justify-center items-center relative aspect-square md:aspect-auto @container md:col-span-6"
-				style="background-image: url('/imgs/maybe_merch.webp');"
-			>
-				<div class="w-fit">
-					<h3 class="spray_gradient text-center text-5xl @sm:text-6xl">Merch</h3>
-					<a href="/merch" class="btn mt-5">View Merch</a>
-				</div>
-			</article>
-			<CampCards classes={['md:col-span-4']} />
 		</div>
 	</main>
 </Layout>
@@ -222,10 +170,7 @@ import Layout from '$src/layouts/Layout.astro';
 			),
 			radial-gradient(circle at bottom right, theme('colors.rose.400') 0.3ch, transparent 3ch),
 			theme('colors.pink.500');
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		text-fill-color: transparent;
-		backdrop-clip: text;
+
 		background-repeat: no-repeat;
 		color: #fff;
 		font-weight: bold;
