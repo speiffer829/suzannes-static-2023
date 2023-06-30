@@ -1,19 +1,20 @@
 ---
 import CampCards from '$src/components/CampCards.astro';
 import Layout from '$src/layouts/Layout.astro';
-import { Picture } from '@astrojs/image/components';
+import { Image } from 'astro:assets';
+
+import holding_img from '$src/assets/imgs/holding.webp';
+import snapping_img from '$src/assets/imgs/snapping.webp';
+import multibarhang_img from '$src/assets/imgs/multibarhang.webp';
 ---
 
 <Layout>
 	<header style="--bg-img: url('/imgs/holding.webp')" class="flex flex-col justify-end bg-pink-50">
 		<div class="wrapper">
-			<Picture
-				class="rounded-xl object-cover object-center aspect-square sm:aspect-video xl:aspect-[16/6] shadow-lg"
-				src="/imgs/holding.webp"
-				alt="Girls holing one another and smiling"
-				widths={[400, 800, 1550, 2000]}
-				formats={['avif', 'webp']}
-				aspectRatio="2000:1333"
+			<Image
+				src={holding_img}
+				alt="Suzanne's Dance & Gymnastics"
+				class="w-full mx-auto rounded-lg shadow-lg aspect-square sm:aspect-video lg:aspect-[16/6] object-cover"
 			/>
 		</div>
 	</header>
@@ -24,11 +25,12 @@ import { Picture } from '@astrojs/image/components';
 				<div
 					class="after:content-[''] relative after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-gradient-to-br from-pink-500/30 to-rose-300/50 after:bg-blend-multiply"
 				>
-					<img
+					<Image
+						width={700}
+						quality={50}
 						class="w-full object-cover object-center h-80 grayscale"
-						src="/imgs/snapping.webp"
+						src={snapping_img}
 						alt="Map"
-						loading="lazy"
 					/>
 				</div>
 
@@ -41,9 +43,11 @@ import { Picture } from '@astrojs/image/components';
 				<div
 					class="after:content-[''] relative after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-gradient-to-br from-pink-500/30 to-sky-500/50 after:bg-blend-multiply"
 				>
-					<img
+					<Image
+						width={700}
+						quality={50}
 						class="w-full object-cover object-center h-80 grayscale"
-						src="/imgs/multibarhang.webp"
+						src={multibarhang_img}
 						alt="Map"
 						loading="lazy"
 					/>
