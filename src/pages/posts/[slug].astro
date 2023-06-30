@@ -1,9 +1,10 @@
 ---
 import Layout from '$src/layouts/Layout.astro';
+import Image from 'astro/components/Image.astro';
 import { getCollection } from 'astro:content';
 export async function getStaticPaths() {
-	const blog_entries = await getCollection('blog');
-	return blog_entries.map((entry) => ({ params: { slug: entry.slug }, props: { entry } }));
+	const posts_entries = await getCollection('posts');
+	return posts_entries.map((entry) => ({ params: { slug: entry.slug }, props: { entry } }));
 }
 
 const { entry } = Astro.props;
@@ -12,15 +13,31 @@ const { Content } = await entry.render();
 
 <Layout title={entry.data.title}>
 	<article class="wrapper blog_wrapper">
-		{
-			entry.data.img && (
-				<div class="mt-0">
-					<img src={entry.data.img} alt={entry.data.title} />
-				</div>
-			)
-		}
-		<h1 class="gradient_text bg-gradient-to-br from-pink-400 to-rose-600">{entry.data.title}</h1>
-		<Content />
+		<header>
+			{
+				entry.data.img && (
+					<div class="mt-0">
+						<Image
+							src={entry.data.img}
+							alt={entry.data.title}
+							class="mt-0"
+							format="avif"
+							width="2000"
+							height={1333}
+						/>
+					</div>
+				)
+			}
+			<div class="border-b-2 border-pink-500">
+				<h1 class="gradient_text bg-gradient-to-br from-pink-400 to-rose-600">
+					{entry.data.title}
+				</h1>
+				<p class="text-neutral-500 text-xs mb-2">{entry.data.date}</p>
+			</div>
+		</header>
+		<main>
+			<Content />
+		</main>
 	</article>
 </Layout>
 
@@ -33,7 +50,7 @@ const { Content } = await entry.render();
 		}
 
 		* {
-			max-width: 800px;
+			max-width: 50rem;
 			margin-left: auto;
 			margin-right: auto;
 		}
@@ -53,17 +70,19 @@ const { Content } = await entry.render();
 		}
 
 		h1 {
-			font-size: theme('fontSize.5xl');
-			margin-bottom: theme('spacing.6');
+			font-size: theme('fontSize.4xl');
 			font-weight: theme('fontWeight.bold');
-			border-bottom: solid 2px theme('colors.pink.600');
 			font-style: italic;
+
+			@screen lg {
+				font-size: theme('fontSize.5xl');
+			}
 		}
 
 		h2 {
 			font-size: theme('fontSize.3xl');
 			margin-bottom: theme('spacing.3');
-			margin-top: theme('spacing.10');
+			margin-top: theme('spacing.16');
 			font-weight: theme('fontWeight.bold');
 			font-style: italic;
 			color: theme('colors.pink.600');
@@ -72,6 +91,11 @@ const { Content } = await entry.render();
 		p {
 			margin-bottom: theme('spacing.6');
 			line-height: 2;
+		}
+
+		a {
+			text-decoration: underline;
+			color: theme('colors.pink.600');
 		}
 	}
 </style>

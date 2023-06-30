@@ -1,17 +1,17 @@
 ---
 import Layout from '$src/layouts/Layout.astro';
 import { getCollection } from 'astro:content';
-const blog_entries = await getCollection('blog');
+const blog_entries = await getCollection('posts');
 ---
 
 <Layout title="Blog">
 	<div class="wrapper">
-		<h1>Blog</h1>
+		<h1>Posts</h1>
 		<ul>
 			{
 				blog_entries.map((entry) => (
 					<li>
-						<a href={`/blog/${entry.slug}`}>{entry.data.title}</a>
+						<a href={`/posts/${entry.slug}`}>{entry.data.title}</a>
 					</li>
 				))
 			}
