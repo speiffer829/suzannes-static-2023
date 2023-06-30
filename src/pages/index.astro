@@ -1,11 +1,14 @@
 ---
 import CampCards from '$src/components/CampCards.astro';
 import Layout from '$src/layouts/Layout.astro';
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 
 import holding_img from '$src/assets/imgs/holding.webp';
 import snapping_img from '$src/assets/imgs/snapping.webp';
 import multibarhang_img from '$src/assets/imgs/multibarhang.webp';
+import maybe_merch_img from '$src/assets/imgs/maybe_merch.webp';
+
+const maybe_merch = await getImage({ src: maybe_merch_img, format: 'webp', width: 700 });
 ---
 
 <Layout>
@@ -82,7 +85,7 @@ import multibarhang_img from '$src/assets/imgs/multibarhang.webp';
 
 			<article
 				class="card bg-cover bg-no-repeat bg-center flex justify-center items-center relative aspect-square md:aspect-auto @container md:col-span-6"
-				style="background-image: url('/imgs/maybe_merch.webp');"
+				style={`background-image: url(${maybe_merch.src});`}
 			>
 				<div class="w-fit">
 					<h3 class="spray_gradient gradient_text text-center text-5xl @sm:text-6xl">Merch</h3>
