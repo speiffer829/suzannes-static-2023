@@ -30,7 +30,7 @@ const maybe_merch = await getImage({ src: maybe_merch_img, format: 'webp', width
 				>
 					<Image
 						width={700}
-						quality={50}
+						quality={100}
 						class="w-full object-cover object-center h-80 grayscale"
 						src={snapping_img}
 						alt="Map"
@@ -39,7 +39,11 @@ const maybe_merch = await getImage({ src: maybe_merch_img, format: 'webp', width
 
 				<div class="p-4 text-center flex flex-[2] flex-col justify-center py-8 px-4">
 					<h3 class="text-4xl font-bold">Classes</h3>
-					<a href="/classes" class="btn mx-auto mt-6 flex items-center gap-2">Learn More</a>
+					<a
+						href="/classes"
+						title="Learn More About Available Classes."
+						class="btn mx-auto mt-6 flex items-center gap-2">Learn More</a
+					>
 				</div>
 			</article>
 			<article id="bus" class="card md:col-span-6 flex flex-col">
@@ -48,7 +52,7 @@ const maybe_merch = await getImage({ src: maybe_merch_img, format: 'webp', width
 				>
 					<Image
 						width={700}
-						quality={50}
+						quality={100}
 						class="w-full object-cover object-center h-80 grayscale"
 						src={multibarhang_img}
 						alt="Map"
@@ -60,6 +64,7 @@ const maybe_merch = await getImage({ src: maybe_merch_img, format: 'webp', width
 					<h3 class="text-4xl font-bold">Jumpin' Jitney</h3>
 					<a
 						href="/jumpin-jitney"
+						title="Learn More About The Jumpin' Jitney."
 						class="btn mx-auto bg-sky-500 hover:bg-sky-100 hover:text-sky-600 border-sky-500 mt-6 flex items-center gap-2"
 						>Learn More
 					</a>
@@ -77,7 +82,7 @@ const maybe_merch = await getImage({ src: maybe_merch_img, format: 'webp', width
 				<a
 					href="/parties"
 					class="btn bg-purple-400 border-purple-400 hover:bg-purple-100 hover:text-purple-600 mt-5 mx-auto md:m-0"
-					>Learn More</a
+					title="Learn More About Parties at Suzanne's.">Learn More</a
 				>
 			</article>
 
@@ -89,7 +94,7 @@ const maybe_merch = await getImage({ src: maybe_merch_img, format: 'webp', width
 			>
 				<div class="w-fit">
 					<h3 class="spray_gradient gradient_text text-center text-5xl @sm:text-6xl">Merch</h3>
-					<a href="/merch" class="btn mt-5">View Merch</a>
+					<a href="/merch" class="btn mt-5" title="View Available Merch.">View Merch</a>
 				</div>
 			</article>
 
@@ -98,6 +103,7 @@ const maybe_merch = await getImage({ src: maybe_merch_img, format: 'webp', width
 					href="https://www.google.com/maps/place/Suzanne's+Dance+%26+Gymnastic's/@40.3509668,-76.3997132,18z/data=!4m2!3m1!1s0x89c6030624df1d39:0xce5d55a8063d8861"
 					target="__blank"
 					class="flex-grow-0 flex-shrink w-full"
+					title="See Us On Google Maps."
 				>
 					<img
 						class="w-full object-cover object-center block max-h-52"
@@ -108,13 +114,17 @@ const maybe_merch = await getImage({ src: maybe_merch_img, format: 'webp', width
 				</a>
 				<div class="p-4 text-center flex flex-col justify-center flex-1 py-8 px-4">
 					<h3 class="text-4xl font-bold">Find Us</h3>
-					<a href="tel:7172722159" class="text-lg mb-2 mt-4" aria-label="7 1 7. 2 7 2. 2 1 5 9."
-						>(717) 272-2159</a
+					<a
+						href="tel:7172722159"
+						class="text-lg mb-2 mt-4 mx-auto w-fit"
+						title="Call Suzanne's Dance & Gymnastics."
+						aria-label="7 1 7. 2 7 2. 2 1 5 9.">(717) 272-2159</a
 					>
 					<address class="md:text-lg">717 N 8th Ave, Lebanon PA 17042</address>
 					<a
 						href="https://www.google.com/maps/place/Suzanne's+Dance+%26+Gymnastic's/@40.3509668,-76.3997132,18z/data=!4m2!3m1!1s0x89c6030624df1d39:0xce5d55a8063d8861"
 						target="_blank"
+						title="Open Google Maps."
 						class="btn mx-auto bg-emerald-500 hover:bg-emerald-100 hover:text-emerald-600 border-emerald-500 mt-12 flex items-center gap-2"
 						>Open Google Maps
 						<svg

@@ -59,7 +59,10 @@
 	}
 
 	.card {
-		@apply bg-white shadow-lg rounded-xl overflow-hidden;
+		background: white;
+		box-shadow: theme('boxShadow.lg');
+		border-radius: theme('borderRadius.xl');
+		overflow: hidden;
 	}
 
 	.gradient_text {

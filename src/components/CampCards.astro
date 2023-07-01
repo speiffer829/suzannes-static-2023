@@ -116,8 +116,8 @@ const { classes } = Astro.props;
 						y2="10"></line></svg
 				>
 			</div>
-			<h3>{dates.year} Senior Camp #1</h3>
-			<p class="ages">2nd Grade And Up</p>
+			<h3>{dates.year} Junior Camp</h3>
+			<p class="ages">Ages 4 to 8 Years Old</p>
 		</div>
 		<a
 			href="/camp"
@@ -155,8 +155,8 @@ const { classes } = Astro.props;
 			--color-700: theme('colors.purple.700');
 		}
 
-		box-shadow: theme('boxShadow.md');
-		border-radius: theme('borderRadius.DEFAULT');
+		box-shadow: theme('boxShadow.lg');
+		border-radius: theme('borderRadius.xl');
 		background-color: theme('colors.white');
 		overflow: hidden;
 		container-type: inline-size;
@@ -188,7 +188,7 @@ const { classes } = Astro.props;
 
 	.dates {
 		font-family: theme('fontFamily.condensed');
-		background-color: var(--color-400);
+		background: var(--color-400);
 		font-size: theme('fontSize.4xl');
 		text-align: center;
 		color: theme('colors.white');
