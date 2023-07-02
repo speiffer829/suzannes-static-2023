@@ -7,6 +7,7 @@ import holding_img from '$src/assets/imgs/holding.webp';
 import snapping_img from '$src/assets/imgs/snapping.webp';
 import multibarhang_img from '$src/assets/imgs/multibarhang.webp';
 import maybe_merch_img from '$src/assets/imgs/maybe_merch.webp';
+import map_img from '$src/assets/imgs/map.webp';
 
 const maybe_merch = await getImage({ src: maybe_merch_img, format: 'webp', width: 700 });
 ---
@@ -29,7 +30,7 @@ const maybe_merch = await getImage({ src: maybe_merch_img, format: 'webp', width
 					class="after:content-[''] relative after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-gradient-to-br from-pink-500/30 to-rose-300/50 after:bg-blend-multiply"
 				>
 					<Image
-						width={700}
+						width={750}
 						quality={100}
 						class="w-full object-cover object-center h-80 grayscale"
 						src={snapping_img}
@@ -51,7 +52,7 @@ const maybe_merch = await getImage({ src: maybe_merch_img, format: 'webp', width
 					class="after:content-[''] relative after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-gradient-to-br from-pink-500/30 to-sky-500/50 after:bg-blend-multiply"
 				>
 					<Image
-						width={700}
+						width={750}
 						quality={100}
 						class="w-full object-cover object-center h-80 grayscale"
 						src={multibarhang_img}
@@ -105,9 +106,10 @@ const maybe_merch = await getImage({ src: maybe_merch_img, format: 'webp', width
 					class="flex-grow-0 flex-shrink w-full"
 					title="See Us On Google Maps."
 				>
-					<img
+					<Image
 						class="w-full object-cover object-center block max-h-52"
-						src="/imgs/map.webp"
+						src={map_img}
+						width={750}
 						alt="Map"
 						loading="lazy"
 					/>

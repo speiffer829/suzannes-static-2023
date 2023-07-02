@@ -1,0 +1,58 @@
+---
+import { Image } from 'astro:assets';
+
+interface PropsType {
+	img_side?: 'left' | 'right';
+	img?: any;
+	img_alt?: string;
+	title?: string;
+	subtitle?: string;
+}
+const { img_side = 'left', img, img_alt, title, subtitle }: PropsType = Astro.props;
+---
+
+<div class="stripe" class:list={img_side}>
+	<div class="wrapper grid lg:grid-cols-2 grid-flow-dense gap-10 lg:gap-20 items-center">
+		{
+			img_side === 'left' && (
+				<div class="stripe_image">
+					<Image src={img} alt={img_alt} width={750} />
+				</div>
+			)
+		}
+		<div class="@container">
+			<header class="mb-6">
+				<h2 class="text-3xl @md:text-4xl @lg:text-5xl font-bold italic text-pink-600">{title}</h2>
+				{subtitle && <h3 class=" mt-2 text-xl text-pink-500">{subtitle}</h3>}
+			</header>
+			<slot />
+		</div>
+		{
+			img_side === 'right' && (
+				<div class="stripe_image right_img">
+					<Image src={img} alt={img_alt} width={750} />
+				</div>
+			)
+		}
+	</div>
+</div>
+
+<style>
+	.stripe {
+		padding: theme('spacing.24') 0;
+		text-align: left;
+
+		img {
+			border-radius: theme('borderRadius.xl');
+			box-shadow: theme('boxShadow.lg');
+		}
+
+		.right_img {
+			grid-row: -1 / span 1;
+
+			@screen lg {
+				grid-column: 2 / span 1;
+			}
+		}
+	}
+</style>

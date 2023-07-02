@@ -1,8 +1,57 @@
 ---
 import Layout from '$src/layouts/Layout.astro';
 import { Image } from 'astro:assets';
+
+import snapping_img from '$src/assets/imgs/snapping.jpg';
+import jazz_img from '$src/assets/imgs/jazz.jpg';
+import bunnies_img from '$src/assets/imgs/bunnies.jpg';
+import gymnastics_img from '$src/assets/imgs/gymnastics.jpg';
+import Stripe from '$src/components/Stripe.astro';
 ---
 
 <Layout title="Classes">
-	<h1>Classes</h1>
+	<header class="wrapper">
+		<Image
+			src={jazz_img}
+			width={2000}
+			alt="Girls laughing and having fun."
+			class="w-full mx-auto rounded-lg shadow-lg aspect-square sm:aspect-video lg:aspect-[16/6] object-cover"
+		/>
+	</header>
+	<main>
+		<Stripe
+			img={bunnies_img}
+			img_alt="snapping image"
+			img_side="left"
+			title="Bouncin' Bunnies"
+			subtitle="1 year old to 3 years old"
+		>
+			<p class="font-bold text-pink-600">$13.00 For An Hour Class OR $49 a Month</p>
+			<p class="text-lg leading-loose">
+				This is a "mommy and me" style class where the child is accompanied by a parent or guardian
+				(just one). The two of you will do a medley of activities designed to help aid the
+				development of motor skills and coordination. This includes simple dances, obstacle courses,
+				and stretches. No equipment is needed but parents and children must wear socks.
+			</p>
+		</Stripe>
+		<Stripe
+			img={gymnastics_img}
+			img_alt="snapping image"
+			img_side="right"
+			title="Gymnastics"
+			subtitle="Ages 2 1/2 and Up"
+		>
+			<p class="font-bold text-pink-600 mb-3">
+				2 1/2 to 6 Years Old: $13.00 For An Hour Class OR $49 a Month
+			</p>
+			<p class="font-bold text-pink-600">
+				7 Years Old or 2nd Grade and Up: $18.50 For An Hour and a Half Class OR $70 a Month
+			</p>
+			<p class="text-lg leading-loose">
+				This class is split up into different gymnastics skills: floor tumbling, uneven bars,
+				balance beam, and vault. Gymnastics is a great way to build strength and coordination that
+				can be used later in most sports. A leotard and gymnastics shoes are required.
+			</p>
+		</Stripe>
+	</main>
 </Layout>
