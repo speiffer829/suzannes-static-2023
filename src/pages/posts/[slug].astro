@@ -1,0 +1,147 @@
+---
+import Layout from '$src/layouts/Layout.astro';
+import { Image, getImage } from 'astro:assets';
+import { getCollection } from 'astro:content';
+export async function getStaticPaths() {
+	const posts_entries = await getCollection('posts');
+	return posts_entries.map((entry) => ({ params: { slug: entry.slug }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={entry.data.title}>
+	<article class="wrapper blog_wrapper">
+		<header class="mb-7">
+			<a href="/posts" class="btn text-white text-xs flex items-center gap-2 mx-0">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="18"
+					height="18"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					class="lucide lucide-arrow-left"
+					><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg
+				>
+				Back To Posts
+			</a>
+			{
+				entry.data.featured_img && (
+					<div class="mt-0 mb-9">
+						<Image src={entry.data.featured_img} alt={entry.data.title} width={960} class="mt-0 " />
+					</div>
+				)
+			}
+			<div class="border-b-2 border-pink-500">
+				<div class="flex justify-start">
+					<span class="text-neutral-500 text-xs mb-0">Published: {entry.data.date}</span>
+					{
+						entry.data.updated && (
+							<span class="updated_date text-neutral-500 text-xs mb-0 ml-2">
+								Updated: {entry.data.updated}
+							</span>
+						)
+					}
+				</div>
+				<h1 class="gradient_text bg-gradient-to-br from-pink-400 to-rose-600">
+					{entry.data.title}
+				</h1>
+			</div>
+		</header>
+		<main>
+			<Content />
+			<a href="/posts" class="btn text-white text-xs flex items-center gap-2 mx-0">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="18"
+					height="18"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					class="lucide lucide-arrow-left"
+					><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg
+				>
+				Back To Posts
+			</a>
+		</main>
+	</article>
+</Layout>
+
+<style is:global>
+	.blog_wrapper {
+		font-size: theme('fontSize.base');
+
+		@screen lg {
+			font-size: theme('fontSize.lg');
+		}
+
+		*:not(span, .btn, img, :has(img)) {
+			max-width: 50rem;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		img,
+		*:has(img) {
+			margin-left: auto;
+			margin-right: auto;
+			@media (min-width: 768px) {
+				max-width: 960px;
+			}
+		}
+		img {
+			border-radius: theme('borderRadius.lg');
+			box-shadow: theme('boxShadow.lg');
+			display: block;
+			margin: theme('spacing.6') auto;
+			width: 100%;
+		}
+		h1 {
+			font-size: theme('fontSize.4xl');
+			font-weight: theme('fontWeight.bold');
+			font-style: italic;
+
+			@screen lg {
+				font-size: theme('fontSize.5xl');
+			}
+		}
+
+		h2 {
+			font-size: theme('fontSize.3xl');
+			margin-bottom: theme('spacing.3');
+			margin-top: theme('spacing.16');
+			font-weight: theme('fontWeight.bold');
+			font-style: italic;
+			color: theme('colors.pink.600');
+		}
+
+		p {
+			margin-bottom: theme('spacing.6');
+			line-height: 2;
+		}
+
+		a:not(.btn) {
+			text-decoration: underline;
+			color: theme('colors.pink.600');
+		}
+
+		.updated_date {
+			position: relative;
+			padding-left: 2em;
+
+			&::before {
+				content: '\2022';
+				position: absolute;
+				left: 0.5em;
+			}
+		}
+	}
+</style>

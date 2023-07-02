@@ -1,0 +1,202 @@
+---
+import dates from '$src/dates.json';
+const { classes } = Astro.props;
+---
+
+<article class="camp-card" class:list={classes}>
+	<p class="dates">
+		{dates.senior_1.start_month}
+		{dates.senior_1.start_day} - {dates.senior_1.end_month}
+		{dates.senior_1.end_day}
+	</p>
+	<div class="py-8 px-4 text-center">
+		<div class="svg-contain">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="32"
+				height="32"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="lucide lucide-calendar"
+				><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line
+					x1="16"
+					x2="16"
+					y1="2"
+					y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line
+					x1="3"
+					x2="21"
+					y1="10"
+					y2="10"></line></svg
+			>
+		</div>
+
+		<h3>{dates.year} Senior Camp #1</h3>
+		<p class="ages">2nd Grade And Up</p>
+		<a
+			href="/camp"
+			class="btn mt-12 w-fit mx-auto rounded-full py-3 px-10 text-center justify-center"
+			>Learn More</a
+		>
+	</div>
+</article>
+
+<article class="camp-card blue flex flex-col" class:list={classes}>
+	<p class="dates flex-1 items-center flex justify-center">
+		{dates.senior_2.start_month}
+		{dates.senior_2.start_day} - {dates.senior_2.end_month}
+		{dates.senior_2.end_day}
+	</p>
+	<div class="py-8 px-4 text-center flex flex-col flex-1">
+		<div class="flex-1">
+			<div class="svg-contain">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="32"
+					height="32"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					class="lucide lucide-calendar"
+					><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line
+						x1="16"
+						x2="16"
+						y1="2"
+						y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line
+						x1="3"
+						x2="21"
+						y1="10"
+						y2="10"></line></svg
+				>
+			</div>
+			<h3>{dates.year} Senior Camp #2</h3>
+			<p class="ages">2nd Grade And Up</p>
+		</div>
+		<a
+			href="/camp"
+			class="btn mt-12 w-fit mx-auto rounded-full py-3 px-10 text-center justify-center bg-sky-500 border-sky-500 hover:bg-sky-200 hover:text-sky-700"
+			>Learn More</a
+		>
+	</div>
+</article>
+<article class="camp-card purple" class:list={classes}>
+	<p class="dates">
+		{dates.senior_1.start_month}
+		{dates.senior_1.start_day} - {dates.senior_1.end_month}
+		{dates.senior_1.end_day}
+	</p>
+	<div class="py-8 px-4 text-center flex flex-col">
+		<div class="flex-1">
+			<div class="svg-contain">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="32"
+					height="32"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					class="lucide lucide-calendar"
+					><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line
+						x1="16"
+						x2="16"
+						y1="2"
+						y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line
+						x1="3"
+						x2="21"
+						y1="10"
+						y2="10"></line></svg
+				>
+			</div>
+			<h3>{dates.year} Junior Camp</h3>
+			<p class="ages">Ages 4 to 8 Years Old</p>
+		</div>
+		<a
+			href="/camp"
+			class="btn mt-12 w-fit mx-auto rounded-full py-3 px-10 text-center justify-center bg-purple-500 border-purple-500 hover:bg-purple-200 hover:text-purple-700"
+			>Learn More</a
+		>
+	</div>
+</article>
+
+<style>
+	.camp-card {
+		--color-200: theme('colors.pink.200');
+		--color-300: theme('colors.pink.300');
+		--color-400: theme('colors.pink.400');
+		--color-500: theme('colors.pink.500');
+		--color-600: theme('colors.pink.600');
+		--color-700: theme('colors.pink.700');
+		--color-800: theme('colors.pink.800');
+
+		&.blue {
+			--color-200: theme('colors.sky.200');
+			--color-300: theme('colors.sky.300');
+			--color-400: theme('colors.sky.400');
+			--color-500: theme('colors.sky.500');
+			--color-600: theme('colors.sky.600');
+			--color-700: theme('colors.sky.700');
+		}
+
+		&.purple {
+			--color-200: theme('colors.purple.200');
+			--color-300: theme('colors.purple.300');
+			--color-400: theme('colors.purple.400');
+			--color-500: theme('colors.purple.500');
+			--color-600: theme('colors.purple.600');
+			--color-700: theme('colors.purple.700');
+		}
+
+		box-shadow: theme('boxShadow.lg');
+		border-radius: theme('borderRadius.xl');
+		background-color: theme('colors.white');
+		overflow: hidden;
+		container-type: inline-size;
+
+		h3 {
+			font-size: theme('fontSize.2xl');
+			font-weight: theme('fontWeight.bold');
+			margin-bottom: theme('spacing.1');
+			margin-top: theme('spacing.8');
+		}
+	}
+
+	.svg-contain {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		aspect-ratio: 1/1;
+		background: #fff;
+		width: fit-content;
+		margin: -54px auto 0;
+		padding: theme('spacing.2');
+		border-radius: 100%;
+	}
+
+	svg {
+		fill: var(--color-200);
+		stroke: var(--color-600);
+	}
+
+	.dates {
+		font-family: theme('fontFamily.condensed');
+		background: var(--color-400);
+		font-size: theme('fontSize.4xl');
+		text-align: center;
+		color: theme('colors.white');
+		padding: theme('spacing.2') theme('spacing.4');
+		padding-bottom: theme('spacing.12');
+
+		@container (min-width: 390px) {
+			font-size: theme('fontSize.5xl');
+		}
+	}
+</style>

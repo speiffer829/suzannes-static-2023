@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+@layer base {
+	body {
+		font-family: theme('fontFamily.primary');
+		min-height: 100dvh;
+		padding-top: 120px;
+	}
+
+	img {
+		width: max(auto, 100%);
+		display: block;
+	}
+
+	.wrapper {
+		max-width: theme('maxWidth.screen-2xl');
+		margin: 0 auto;
+		padding: 0 theme('spacing.4');
+	}
+
+	.hero {
+		background-color: theme('colors.pink.500');
+		background: linear-gradient(to bottom right, theme('colors.pink.500'), theme('colors.sky.600')),
+			var(--bg-img) center no-repeat;
+		background-blend-mode: color;
+		background-size: cover;
+		min-height: 50vh;
+		width: 100%;
+
+		@screen lg {
+			min-height: 70vh;
+			background-attachment: fixed;
+		}
+	}
+
+	.btn {
+		background-color: theme('colors.pink.500');
+		color: theme('colors.white');
+		padding: theme('spacing.3') theme('spacing.10');
+		border-radius: theme('borderRadius.full');
+		transition: all 3ms ease-in-out;
+		display: flex;
+		width: fit-content;
+		border: 2px solid theme('colors.pink.500');
+		transition: all 250ms ease-in-out;
+
+		&:hover {
+			background-color: theme('colors.pink.100');
+			color: theme('colors.pink.600');
+		}
+	}
+
+	.card {
+		background: white;
+		box-shadow: theme('boxShadow.lg');
+		border-radius: theme('borderRadius.xl');
+		overflow: hidden;
+	}
+
+	.gradient_text {
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+
+		&::selection {
+			background-color: theme('colors.rose.500');
+			color: theme('colors.white');
+			-webkit-text-fill-color: initial;
+			-webkit-background-clip: initial;
+		}
+	}
+}
+
+::selection {
+	background-color: theme('colors.rose.500');
+	color: theme('colors.white');
+}
