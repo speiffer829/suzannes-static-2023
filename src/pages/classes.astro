@@ -1,12 +1,14 @@
 ---
 import Layout from '$src/layouts/Layout.astro';
 import { Image } from 'astro:assets';
+import Stripe from '$src/components/Stripe.astro';
 
 import snapping_img from '$src/assets/imgs/snapping.jpg';
 import jazz_img from '$src/assets/imgs/jazz.jpg';
 import bunnies_img from '$src/assets/imgs/bunnies.jpg';
 import gymnastics_img from '$src/assets/imgs/gymnastics.jpg';
-import Stripe from '$src/components/Stripe.astro';
+import danceacro_img from '$src/assets/imgs/danceacro.jpg';
+import realdanceacro_img from '$src/assets/imgs/realdanceacro.jpg';
 ---
 
 <Layout title="Classes">
@@ -26,7 +28,7 @@ import Stripe from '$src/components/Stripe.astro';
 			title="Bouncin' Bunnies"
 			subtitle="1 year old to 3 years old"
 		>
-			<p class="font-bold text-pink-600">$13.00 For An Hour Class OR $49 a Month</p>
+			<p class="font-bold text-pink-600 mb-3">$13.00 For An Hour Class OR $49 a Month</p>
 			<p class="text-lg leading-loose">
 				This is a "mommy and me" style class where the child is accompanied by a parent or guardian
 				(just one). The two of you will do a medley of activities designed to help aid the
@@ -36,7 +38,7 @@ import Stripe from '$src/components/Stripe.astro';
 		</Stripe>
 		<Stripe
 			img={gymnastics_img}
-			img_alt="snapping image"
+			img_alt="handstands"
 			img_side="right"
 			title="Gymnastics"
 			subtitle="Ages 2 1/2 and Up"
@@ -44,13 +46,42 @@ import Stripe from '$src/components/Stripe.astro';
 			<p class="font-bold text-pink-600 mb-3">
 				2 1/2 to 6 Years Old: $13.00 For An Hour Class OR $49 a Month
 			</p>
-			<p class="font-bold text-pink-600">
+			<p class="font-bold text-pink-600 mb-3">
 				7 Years Old or 2nd Grade and Up: $18.50 For An Hour and a Half Class OR $70 a Month
 			</p>
 			<p class="text-lg leading-loose">
 				This class is split up into different gymnastics skills: floor tumbling, uneven bars,
 				balance beam, and vault. Gymnastics is a great way to build strength and coordination that
 				can be used later in most sports. A leotard and gymnastics shoes are required.
+			</p>
+		</Stripe>
+		<Stripe
+			img={danceacro_img}
+			img_alt="a bunch of little ballerinas"
+			img_side="left"
+			title="Tap, Ballet, & Acrobatics"
+			subtitle="Ages 2 1/2 to 6 Years Old"
+		>
+			<p class="font-bold text-pink-600 mb-3">$13.00 For An Hour Class OR $49 a Month</p>
+			<p class="text-lg leading-loose">
+				<strong>If your child is 2, they must turn 3 by December 31st.</strong> This class mixes tap
+				for rhythm, ballet for poise, plus floor tumbling for body awareness and fun. This class can
+				supply the basics needed to go into any type of dance and prepare children as young as 2 years
+				old. Ballet and tap shoes will eventually be required as well as a leotard.
+			</p>
+		</Stripe>
+		<Stripe
+			img={realdanceacro_img}
+			img_alt="Dance Acro"
+			img_side="right"
+			title="Dance & Acrobatics"
+			subtitle="Ages 5 and Up"
+		>
+			<p class="font-bold text-pink-600 mb-3">$13.00 For An Hour Class OR $49 a Month</p>
+			<p class="text-lg leading-loose">
+				This hour long class is divided in half; one half being dedicated to hip hop and jazz style
+				dance, and the other is devoted to floor tumbling. Gymnastics shoes and a leotard will
+				eventually be required.
 			</p>
 		</Stripe>
 	</main>
