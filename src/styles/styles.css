@@ -23,7 +23,7 @@
 	.wrapper {
 		max-width: theme('maxWidth.screen-2xl');
 		margin: 0 auto;
-		padding: 0 theme('spacing.4');
+		padding: 0 theme('spacing.8');
 	}
 
 	.hero {
@@ -74,6 +74,26 @@
 			color: theme('colors.white');
 			-webkit-text-fill-color: initial;
 			-webkit-background-clip: initial;
+		}
+	}
+
+	.stripe:nth-child(even) {
+		background-color: theme('colors.pink.100');
+	}
+
+	.hero_img {
+		width: 100%;
+		margin: 0 auto;
+		border-radius: theme('borderRadius.xl');
+		box-shadow: theme('boxShadow.lg');
+		aspect-ratio: 1/1;
+		object-fit: cover;
+
+		@screen sm {
+			aspect-ratio: 16/9;
+		}
+		@screen lg {
+			aspect-ratio: 16/6;
 		}
 	}
 }

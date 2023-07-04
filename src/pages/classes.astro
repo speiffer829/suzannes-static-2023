@@ -15,12 +15,13 @@ import flip_img from '$src/assets/imgs/acrowithmyback.jpg';
 
 <Layout title="Classes">
 	<header class="wrapper">
-		<Image
-			src={jazz_img}
-			width={2000}
-			alt="Girls laughing and having fun."
-			class="w-full mx-auto rounded-lg shadow-lg aspect-square sm:aspect-video lg:aspect-[16/6] object-cover"
-		/>
+		<Image src={jazz_img} width={2000} alt="Girls laughing and having fun." class="hero_img" />
+
+		<h1
+			class="font-bold gradient_text bg-gradient-to-br from-pink-500 to-rose-300 text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-center pt-10"
+		>
+			Classes
+		</h1>
 	</header>
 	<main>
 		<Stripe
@@ -127,5 +128,24 @@ import flip_img from '$src/assets/imgs/acrowithmyback.jpg';
 				Gymnastics shoes and a leotard are required.
 			</p>
 		</Stripe>
+
+		<div class="wrapper mb-20">
+			<div
+				class="card col-span-full px-4 py-6 md:flex justify-between items-center bg-gradient-to-b from-orange-200 to-pink-200 flex-wrap"
+			>
+				<h2 class="font-bold text-3xl text-center md:text-left">
+					<span class="gradient_text bg-gradient-to-br from-violet-500 to-sky-400"
+						>Wanna Join The Fun?</span
+					>
+				</h2>
+				<a
+					href="/registration-2022-2023.pdf"
+					target="_blank"
+					title="Download Sign Up Sheet"
+					class="btn mt-5 mx-auto md:m-0"
+					title="Learn More About Parties at Suzanne's.">Download Sign Up Sheet</a
+				>
+			</div>
+		</div>
 	</main>
 </Layout>
