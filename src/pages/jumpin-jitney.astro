@@ -1,7 +1,125 @@
 ---
 import Layout from '$src/layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import Stripe from '$src/components/Stripe.astro';
+
+import multibarhang_img from '$src/assets/imgs/multibarhang.jpg';
+import hidden_img from '$src/assets/imgs/hidden.jpg';
+import bus_img from '$src/assets/imgs/bus.webp';
+import hangingbar_img from '$src/assets/imgs/hangingbar.jpg';
+import handstand_img from '$src/assets/imgs/handstand.jpg';
+import tramp_img from '$src/assets/imgs/tramp.jpg';
 ---
 
 <Layout title="Jumpin' Jitney">
-	<h1>Jumpin' Jitney</h1>
+	<header class="wrapper">
+		<Image src={multibarhang_img} width={2000} alt="Kids hanging on a bar" class="hero_img" />
+
+		<h1
+			class="font-bold gradient_text bg-gradient-to-r from-pink-500 via-violet-400 to-sky-500 text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-center pt-10"
+		>
+			Jumpin' Jitney
+		</h1>
+	</header>
+
+	<main>
+		<Stripe
+			img={hidden_img}
+			img_alt="snapping image"
+			img_side="left"
+			title="What Is The Jumpin' Jitney"
+			subtitle="Other Than An Awesome-Looking Bus!"
+		>
+			<p class="text-lg leading-loose">
+				The Jumpin' Jitney is a specialized sports/gymnastics program that aims to aid in the
+				development of motor skills and athleticism in children. It comes at the same time once a
+				week to your child's daycare center for a 35 minute class. Every two weeks the lesson plan
+				is changed to work on different skills using a different theme. <strong
+					class="font-bold text-red-500"
+				>
+					We Do Not Transport Your Child Anywhere.
+				</strong>
+			</p>
+		</Stripe>
+
+		<Stripe
+			img={bus_img}
+			img_alt="Jupmin Jitney Bus"
+			img_side="right"
+			title="A Little About The Bus Itself"
+			subtitle="It's More Than Just Another Pretty Bus"
+		>
+			<p class="text-lg leading-loose">
+				It's a full sized school bus that has been transformed into a mobile gym and has been padded
+				and carpeted for safety. It's also been fitted with monkey bars and places to attach
+				equipment such as a zipline, trapeze, rings, etc.
+			</p>
+		</Stripe>
+
+		<Stripe
+			img={hangingbar_img}
+			img_alt="Boy hanging from bar"
+			img_side="left"
+			title="How To Register"
+			subtitle="Available Year-Round"
+		>
+			<p class="text-lg leading-loose">
+				Fill out a registration form located next to the Jitney box at your child's daycare. Drop it
+				in the Jitney box along with payment. For cash payment use one of the yellow envelopes next
+				to the box. If you are using a check, write the child's name on the memo line (no envelope
+				needed). If you would like to pay automatically, fill out the "Automatic Credit Card Form".
+			</p>
+
+			<a href="/jitneysignup.pdf" target="_blank" class="btn mt-8">Registration Form</a>
+		</Stripe>
+
+		<Stripe
+			img={handstand_img}
+			img_alt="Boy hanging from bar"
+			img_side="right"
+			title="Pay Weekly"
+			subtitle="$11 Per Class Per Week"
+		>
+			<p class="text-lg leading-loose">
+				You can also choose to pay ahead for as many classes as you want ($11/class/week). This
+				payment plan allows you to forward payments if your child is unable to attend Jitney on a
+				given week.
+			</p>
+		</Stripe>
+
+		<Stripe
+			img={tramp_img}
+			img_alt="Boy hanging from bar"
+			img_side="left"
+			title="Or Pay Monthly"
+			subtitle="$41 At The Beginning Of The Month"
+		>
+			<p class="text-lg leading-loose">
+				This will cover the 1st to the 31st of that month. The advantage of this is not only
+				discounted lessons but if any month has a fifth lesson, it's free. The disadvantage is that
+				this payment plan <strong class="font-bold text-red-500">DOES NOT</strong> allow you to carry
+				over to the next month. So if you miss a class, the payment is not forwarded. You can also have
+				your credit card automatically charged each month for a $1 fee.
+			</p>
+		</Stripe>
+	</main>
+
+	<div class="wrapper mb-20">
+		<div
+			class="card col-span-full px-4 py-6 md:flex justify-between items-center bg-gradient-to-b from-blue-200 to-sky-100 flex-wrap"
+		>
+			<h2 class="font-bold text-3xl text-center md:text-left">
+				<span class="gradient_text bg-gradient-to-r from-pink-500 via-rose-400 to-violet-400"
+					>Wanna Join The Fun?</span
+				>
+			</h2>
+			<a
+				href="/registration-2022-2023.pdf"
+				target="_blank"
+				title="Download Sign Up Sheet"
+				class="btn mt-5 mx-auto md:m-0 bg-sky-400 border-sky-400 hover:bg-sky-100 hover:text-sky-600"
+				title="Learn More About Parties at Suzanne's.">Download Registration</a
+			>
+		</div>
+	</div>
 </Layout>
