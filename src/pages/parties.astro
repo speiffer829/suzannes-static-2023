@@ -1,7 +1,59 @@
 ---
 import Layout from '$src/layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import Stripe from '$src/components/Stripe.astro';
+
+import partyheader_img from '$src/assets/imgs/partyheader.jpg';
+import underpara_img from '$src/assets/imgs/underpara.jpg';
+import vollyball_img from '$src/assets/imgs/vollyball.jpg';
 ---
 
 <Layout title="Parties">
-	<h1>Parties</h1>
+	<header class="wrapper">
+		<Image src={partyheader_img} width={2000} alt="Kids hanging on a bar" class="hero_img" />
+
+		<h1
+			class="font-bold gradient_text bg-gradient-to-br from-indigo-400 to-rose-500 text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-center pt-10 w-fit mx-auto"
+		>
+			Parties
+		</h1>
+	</header>
+
+	<Stripe
+		title="Party At Suzanne's"
+		subtitle="2 Hours For $120"
+		img={underpara_img}
+		img_alt="Kids under parachute"
+	>
+		<p class="text-lg leading-loose">
+			An additional instructor is available for <strong class="font-bold text-pink-600">$20</strong
+			>. One hour of supervised instruction including games, activities, and races geared to both
+			boys and girls. Forty-five minutes in the reception area for food, gifts, and other activities
+			provided by you. Then, if time allows, fifteen minutes of free time in the gym. The best part
+			is there's no mess at your house or lingering guests. Call <a
+				href="tel:7172722159"
+				class="underline text-pink-600">717-272-2159</a
+			> to reserve your time today!
+		</p>
+	</Stripe>
+
+	<Stripe
+		title="Party On The Jumpin' Jitney"
+		subtitle="It's An Actual Party Bus"
+		img={vollyball_img}
+		img_alt="Kids playing volleyball"
+		img_side="right"
+	>
+		<p class="text-lg leading-loose">
+			We come to you for 1 hour of activity for <strong class="font-bold text-pink-600">$130</strong
+			> (<strong class="font-bold text-pink-600">$20</strong> more for anyone outside Lebanon County).
+			These activities include zipline, the parachute, obstacle course, and much more! There is a maximum
+			of fifteen children allowed on the bus at a time. A second instructor is available for <strong
+				class="font-bold text-pink-600">$20</strong
+			>. A second instructor is recommended for parties with more than ten children. Call <a
+				href="tel:7172722159"
+				class="underline text-pink-600">717-272-2159</a
+			> to book a party today!
+		</p>
+	</Stripe>
 </Layout>
