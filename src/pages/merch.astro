@@ -1,7 +1,109 @@
 ---
 import Layout from '$src/layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import Stripe from '$src/components/Stripe.astro';
+
+import bwglasses_img from '$src/assets/imgs/bwglasses.jpg';
+import leotards_img from '$src/assets/imgs/leotards.jpg';
+import gymshoe_img from '$src/assets/imgs/gymshoe.jpg';
+import balletshoe_img from '$src/assets/imgs/balletshoes.jpg';
+import tapshoe_img from '$src/assets/imgs/tapshoes.jpg';
+import jazzshoe_img from '$src/assets/imgs/jazzshoes.jpg';
 ---
 
 <Layout title="Merch">
-	<h1>Merch</h1>
+	<header class="wrapper">
+		<Image src={bwglasses_img} width={2000} alt="Suzanne's Brand Sunglasses" class="hero_img" />
+
+		<h1
+			class="font-bold gradient_text bg-gradient-to-r from-cyan-500 via-violet-400 to-amber-500 text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-center pt-10 w-fit mx-auto"
+		>
+			Merchandise
+		</h1>
+	</header>
+
+	<main>
+		<Stripe
+			title="Leotards & Tights"
+			subtitle="Wonderful One-Pieces"
+			img={leotards_img}
+			img_alt="Leotards"
+		>
+			<p class="text-lg leading-loose">
+				Leotards are expected to be worn in all classes except Bouncin' Bunnies. They come in many
+				sizes varying from extra-small child to extra-large adult.
+			</p>
+			<ul class="text-lg leading-loose list-disc pl-4">
+				<li>Child Leotard - $40</li>
+				<li>Adult Leotard - $40</li>
+				<li>Child Tights - $11</li>
+				<li>Adult Tights - $13</li>
+			</ul>
+		</Stripe>
+
+		<Stripe
+			title="Gymnastics Shoes"
+			subtitle="Comfortable & Durable"
+			img={gymshoe_img}
+			img_alt="Gymnastics Shoes"
+			img_side="right"
+		>
+			<p class="text-lg leading-loose">
+				Gymnastics Shoes will be expected for gymnastics, acrobatics, and dance/acrobatics classes.
+			</p>
+
+			<ul class="text-lg leading-loose list-disc pl-4">
+				<li>Leather - $25</li>
+				<li>Suede - $60</li>
+			</ul>
+		</Stripe>
+
+		<Stripe
+			title="Tap Shoes"
+			subtitle="The Louder, The Better"
+			img={tapshoe_img}
+			img_alt="Tap Shoes"
+			img_side="left"
+		>
+			<p class="text-lg leading-loose mb-4">
+				Tap shoes will be needed for tap, ballet, and acrobatics classes and also for tap and ballet
+				classes.
+			</p>
+
+			<ul class="text-lg leading-loose list-disc pl-4">
+				<li>Any Size - $25</li>
+			</ul>
+		</Stripe>
+
+		<Stripe
+			title="Ballet Shoes"
+			subtitle="A Must-Have For Any Aspiring Ballerina"
+			img={balletshoe_img}
+			img_alt="Ballet Shoes"
+			img_side="right"
+		>
+			<p class="text-lg leading-loose mb-4">
+				Ballet shoes will be required for any tap, ballet, and acrobatics classes, jazz classes, and
+				also for tap and ballet classes.
+			</p>
+
+			<ul class="text-lg leading-loose list-disc pl-4">
+				<li>Any Size - $25</li>
+			</ul>
+		</Stripe>
+
+		<Stripe
+			title="Jazz Shoes"
+			subtitle="Shoes As Fresh As Your Moves"
+			img={jazzshoe_img}
+			img_alt="Jazz Shoes"
+			img_side="left"
+		>
+			<p class="text-lg leading-loose mb-4">Jazz shoes will be needed for jazz class.</p>
+
+			<ul class="text-lg leading-loose list-disc pl-4">
+				<li>Any Size - $38</li>
+			</ul>
+		</Stripe>
+	</main>
 </Layout>
