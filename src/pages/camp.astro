@@ -1,8 +1,92 @@
 ---
 import Layout from '$src/layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import Stripe from '$src/components/Stripe.astro';
+import CampCards from '$src/components/CampCards.astro';
+
+import campheader_img from '$src/assets/imgs/campheader.jpg';
+import raven_img from '$src/assets/imgs/raven.jpg';
+import jrcamp_img from '$src/assets/imgs/jrcamp.jpg';
+import slipnslide_img from '$src/assets/imgs/slipnslide.jpg';
+import horse_img from '$src/assets/imgs/horse.jpg';
 ---
 
 <Layout title="Camp">
-	<h1>Camp</h1>
-	<p>Coming soon...</p>
+	<header class="wrapper">
+		<Image src={campheader_img} width={2000} alt="Kids hanging on a bar" class="hero_img" />
+
+		<h1
+			class="font-bold gradient_text bg-gradient-to-r from-sky-500 to-emerald-500 text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-center pt-10 w-fit mx-auto"
+		>
+			Camp
+		</h1>
+	</header>
+
+	<main>
+		<div class="grid lg:grid-cols-3 gap-7 my-16 wrapper">
+			<CampCards show_btns={false} />
+		</div>
+
+		<Stripe
+			img={raven_img}
+			img_alt="Young Girl"
+			img_side="left"
+			title="Senior Camp"
+			subtitle="2nd Grade & Up"
+		>
+			<p class="font-bold text-pink-600 mb-3">9am To 3pm</p>
+			<p class="text-lg leading-loose">
+				Suzanne's Gymnastics Camp will consist of 6 hours of organized instruction a day. The cost
+				of one week of fun, fitness, and instruction by Nikki, Jessie, and other qualified
+				instructors will be <strong class="font-bold text-pink-600">$170.</strong>
+			</p>
+		</Stripe>
+		<Stripe
+			img={jrcamp_img}
+			img_alt="2 Young Girls"
+			img_side="right"
+			title="Junior Camp"
+			subtitle="Ages 4 to 8 years old"
+		>
+			<p class="font-bold text-pink-600 mb-3">9am To 12pm OR 1pm To 4pm</p>
+			<p class="text-lg leading-loose">
+				Suzanne's Jr. Gymnastics Camp will consist of 3 hours of organized instruction a day. The
+				cost of one week of fun, fitness, and instruction by Nikki, Jessie, and other qualified
+				instructors will be <strong class="font-bold text-pink-600">$85.</strong>
+			</p>
+		</Stripe>
+
+		<Stripe
+			img={slipnslide_img}
+			img_alt="2 girls on a slip n' slide"
+			img_side="left"
+			title="What You'll Need For Senior Camp"
+		>
+			<ul class="list-disc pl-4">
+				<li class="mb-3">Leotard</li>
+				<li class="mb-3">Gymnastics Shoes</li>
+				<li class="mb-3">Water Bottle OR Soda Machine Money</li>
+				<li class="mb-3">Snack or Snack Money</li>
+				<li class="mb-3">
+					Packed Lunch except on Friday pizza will be served. A microwave is available but a fridge
+					is not
+				</li>
+				<li class="mb-3">Swim Suit for Tuesday</li>
+				<li>Slushy Money for Wednesday</li>
+			</ul>
+		</Stripe>
+		<Stripe
+			img={horse_img}
+			img_alt="3 girls sitting on toy horses"
+			img_side="right"
+			title="What You'll Need For Junior Camp"
+		>
+			<ul class="list-disc pl-4">
+				<li class="mb-3">Leotard</li>
+				<li class="mb-3">Gymnastics Shoes</li>
+				<li class="mb-3">Water Bottle OR Soda Machine Money</li>
+				<li class="">Snack or Snack Money</li>
+			</ul>
+		</Stripe>
+	</main>
 </Layout>

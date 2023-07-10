@@ -1,6 +1,6 @@
 ---
 import dates from '$src/dates.json';
-const { classes } = Astro.props;
+const { classes, show_btns = true } = Astro.props;
 ---
 
 <article class="camp-card" class:list={classes}>
@@ -36,11 +36,16 @@ const { classes } = Astro.props;
 
 		<h3>{dates.year} Senior Camp #1</h3>
 		<p class="ages">2nd Grade And Up</p>
-		<a
-			href="/camp"
-			class="btn mt-12 w-fit mx-auto rounded-full py-3 px-10 text-center justify-center"
-			>Learn More</a
-		>
+		{
+			show_btns && (
+				<a
+					href="/camp"
+					class="btn mt-12 w-fit mx-auto rounded-full py-3 px-10 text-center justify-center"
+				>
+					Learn More
+				</a>
+			)
+		}
 	</div>
 </article>
 
@@ -78,11 +83,16 @@ const { classes } = Astro.props;
 			<h3>{dates.year} Senior Camp #2</h3>
 			<p class="ages">2nd Grade And Up</p>
 		</div>
-		<a
-			href="/camp"
-			class="btn mt-12 w-fit mx-auto rounded-full py-3 px-10 text-center justify-center bg-sky-500 border-sky-500 hover:bg-sky-200 hover:text-sky-700"
-			>Learn More</a
-		>
+		{
+			show_btns && (
+				<a
+					href="/camp"
+					class="btn mt-12 w-fit mx-auto rounded-full py-3 px-10 text-center justify-center bg-sky-500 border-sky-500 hover:bg-sky-100 hover:text-sky-700"
+				>
+					Learn More
+				</a>
+			)
+		}
 	</div>
 </article>
 <article class="camp-card purple" class:list={classes}>
@@ -119,11 +129,16 @@ const { classes } = Astro.props;
 			<h3>{dates.year} Junior Camp</h3>
 			<p class="ages">Ages 4 to 8 Years Old</p>
 		</div>
-		<a
-			href="/camp"
-			class="btn mt-12 w-fit mx-auto rounded-full py-3 px-10 text-center justify-center bg-purple-500 border-purple-500 hover:bg-purple-200 hover:text-purple-700"
-			>Learn More</a
-		>
+		{
+			show_btns && (
+				<a
+					href="/camp"
+					class="btn mt-12 w-fit mx-auto rounded-full py-3 px-10 text-center justify-center bg-purple-500 border-purple-500 hover:bg-purple-100 hover:text-purple-700"
+				>
+					Learn More
+				</a>
+			)
+		}
 	</div>
 </article>
 
