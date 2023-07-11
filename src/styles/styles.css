@@ -23,7 +23,15 @@
 	.wrapper {
 		max-width: theme('maxWidth.screen-2xl');
 		margin: 0 auto;
-		padding: 0 theme('spacing.8');
+		padding: 0 theme('spacing.2');
+
+		@media (min-width: 350px) {
+			padding: 0 theme('spacing.4');
+		}
+
+		@screen sm {
+			padding: 0 theme('spacing.8');
+		}
 	}
 
 	.hero {
@@ -94,6 +102,31 @@
 		}
 		@screen lg {
 			aspect-ratio: 16/6;
+		}
+	}
+
+	.input {
+		font-size: theme('fontSize.lg');
+
+		label,
+		input,
+		textarea {
+			display: block;
+		}
+
+		input,
+		textarea {
+			padding: theme('spacing.3') theme('spacing.3');
+			display: block;
+			width: 100%;
+			border-radius: theme('borderRadius.lg');
+			outline: none;
+			color: theme('colors.gray.800');
+
+			&:focus,
+			&:active {
+				outline: solid 2px theme('colors.pink.500');
+			}
 		}
 	}
 }
