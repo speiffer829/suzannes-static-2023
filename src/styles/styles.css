@@ -106,12 +106,21 @@
 	}
 
 	.input {
-		font-size: theme('fontSize.lg');
+		font-size: theme('fontSize.base');
+
+		@screen sm {
+			font-size: theme('fontSize.lg');
+		}
 
 		label,
 		input,
 		textarea {
 			display: block;
+		}
+
+		label {
+			font-weight: theme('fontWeight.bold');
+			margin-bottom: theme('spacing.1');
 		}
 
 		input,
