@@ -1,17 +1,40 @@
 ---
 import Layout from '$src/layouts/Layout.astro';
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 const blog_entries = await getCollection('posts');
+
+import fosse_img from '$src/assets/imgs/fosse.jpg';
 ---
 
 <Layout title="Blog">
 	<div class="wrapper">
-		<h1>Posts</h1>
-		<ul>
+		<header class="wrapper">
+			<Image src={fosse_img} width={2000} alt="Dog looking at some blog posts" class="hero_img" />
+
+			<h1
+				class="font-bold gradient_text bg-gradient-to-r from-amber-500 via-fuchsia-500 to-cyan-400 text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-center pt-10 w-fit mx-auto"
+			>
+				Posts
+			</h1>
+		</header>
+		<ul class="max-w-3xl mx-auto my-14">
 			{
 				blog_entries.map((entry) => (
-					<li>
-						<a href={`/posts/${entry.slug}`}>{entry.data.title}</a>
+					<li class="my-5 bg-white shadow-lg rounded-xl p-5 flex gap-5">
+						{entry.data.title && (
+							<Image
+								src={entry.data.featured_img}
+								width={150}
+								alt={entry.data.title}
+								class="aspect-video object-cover rounded-lg shadow-md"
+							/>
+						)}
+						<div>
+							<a class="" href={`/posts/${entry.slug}`}>
+								Read This Post
+							</a>
+						</div>
 					</li>
 				))
 			}
