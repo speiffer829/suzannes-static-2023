@@ -22,7 +22,7 @@ import fosse_img from '$src/assets/imgs/fosse.jpg';
 			{
 				blog_entries.map((entry) => (
 					<li class="my-5 bg-white shadow-lg rounded-xl p-5 flex gap-5">
-						{entry.data.title && (
+						{entry.data.featured_img && (
 							<Image
 								src={entry.data.featured_img}
 								width={150}
