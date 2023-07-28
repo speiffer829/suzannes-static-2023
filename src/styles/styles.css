@@ -1,3 +1,32 @@
+@font-face {
+	font-family: 'moranga';
+	src: url('/fonts/moranga-bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'moranga';
+	src: url('/fonts/moranga-bold-italic.woff') format('woff');
+	font-weight: bold;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'moranga';
+	src: url('/fonts/moranga-black-italic.woff') format('woff');
+	font-weight: black;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'moranga';
+	src: url('/fonts/moranga-black.woff') format('woff');
+	font-weight: black;
+	font-style: normal;
+	font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -136,6 +165,23 @@
 			&:active {
 				outline: solid 2px theme('colors.pink.500');
 			}
+		}
+	}
+
+	.page_title {
+		font-family: theme('fontFamily.fancy');
+		font-weight: 900;
+		font-size: theme('fontSize.4xl');
+		text-align: center;
+		padding-top: theme('spacing.10');
+		width: fit-content;
+		margin: 0 auto;
+
+		@screen xs {
+			font-size: theme('fontSize.6xl');
+		}
+		@screen lg {
+			font-size: theme('fontSize.7xl');
 		}
 	}
 }
