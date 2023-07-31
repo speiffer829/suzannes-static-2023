@@ -12,7 +12,9 @@ const { img_side = 'left', img, img_alt, title, subtitle }: PropsType = Astro.pr
 ---
 
 <div class="stripe" class:list={img_side}>
-	<div class="wrapper grid lg:grid-cols-2 grid-flow-dense gap-10 lg:gap-20 items-center">
+	<div
+		class="wrapper grid justify-center lg:grid-cols-2 grid-flow-dense gap-10 lg:gap-20 items-center"
+	>
 		{
 			img_side === 'left' && (
 				<div class="stripe_image">
@@ -23,11 +25,11 @@ const { img_side = 'left', img, img_alt, title, subtitle }: PropsType = Astro.pr
 		<div class="@container">
 			<header class="mb-6">
 				<h2
-					class="text-3xl @md:text-4xl @lg:text-5xl font-bold italic text-pink-600 font-fancy font-black"
+					class="text-3xl @md:text-4xl @lg:text-5xl italic gradient_text bg-gradient-to-br from-pink-600 to-rose-300 font-fancy font-black"
 				>
 					{title}
 				</h2>
-				{subtitle && <h3 class=" mt-2 text-xl text-pink-500">{subtitle}</h3>}
+				{subtitle && <h3 class=" mt-2 text-xl text-pink-500 ">{subtitle}</h3>}
 			</header>
 			<slot />
 		</div>

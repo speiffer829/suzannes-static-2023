@@ -1,27 +1,27 @@
 @font-face {
 	font-family: 'moranga';
-	src: url('/fonts/moranga-bold.woff') format('woff');
+	src: url('/fonts/moranga-bold.woff2') format('woff2');
 	font-weight: bold;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'moranga';
-	src: url('/fonts/moranga-bold-italic.woff') format('woff');
+	src: url('/fonts/moranga-bold-italic.woff2') format('woff2');
 	font-weight: bold;
 	font-style: italic;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'moranga';
-	src: url('/fonts/moranga-black-italic.woff') format('woff');
+	src: url('/fonts/moranga-black-italic.woff2') format('woff2');
 	font-weight: black;
 	font-style: italic;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'moranga';
-	src: url('/fonts/moranga-black.woff') format('woff');
+	src: url('/fonts/moranga-black.woff2') format('woff2');
 	font-weight: black;
 	font-style: normal;
 	font-display: swap;
@@ -170,7 +170,7 @@
 
 	.page_title {
 		font-family: theme('fontFamily.fancy');
-		font-weight: 900;
+		font-weight: 700;
 		font-size: theme('fontSize.4xl');
 		text-align: center;
 		padding-top: theme('spacing.10');
