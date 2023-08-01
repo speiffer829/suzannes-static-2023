@@ -7,6 +7,13 @@
 		toggle_btn.setAttribute('aria-expanded', `${!expanded}`);
 		nav.classList.toggle('open');
 	});
+
+	// Close the nav when clicking outside of it
+	document.addEventListener('click', (e) => {
+		if (e.target.closest('#primary_nav') || e.target.closest('#hamburger')) return;
+		toggle_btn.setAttribute('aria-expanded', 'false');
+		nav.classList.remove('open');
+	});
 </script>
 
 <div class="fixed w-full top-3 isolate z-50 px-4">
