@@ -108,6 +108,7 @@ const { Content } = await entry.render();
 			font-size: theme('fontSize.4xl');
 			font-weight: theme('fontWeight.bold');
 			font-style: italic;
+			font-family: theme('fontFamily.fancy');
 
 			@screen lg {
 				font-size: theme('fontSize.5xl');
@@ -121,6 +122,7 @@ const { Content } = await entry.render();
 			font-weight: theme('fontWeight.bold');
 			font-style: italic;
 			color: theme('colors.pink.600');
+			font-family: theme('fontFamily.fancy');
 		}
 
 		p {
@@ -131,6 +133,10 @@ const { Content } = await entry.render();
 		a:not(.btn) {
 			text-decoration: underline;
 			color: theme('colors.pink.600');
+
+			&:hover {
+				color: theme('colors.sky.400');
+			}
 		}
 
 		.updated_date {
@@ -142,6 +148,11 @@ const { Content } = await entry.render();
 				position: absolute;
 				left: 0.5em;
 			}
+		}
+
+		strong {
+			font-family: theme('fontFamily.fancy');
+			font-weight: theme('fontWeight.bold');
 		}
 	}
 </style>
