@@ -6,9 +6,10 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'http://suzannesdance.com',
+	site: 'http://meantime.spenserpeiffer.com',
 	integrations: [tailwind(), sitemap(), mdx()],
 	experimental: {
 		assets: true
-	}
+	},
+	build: {}
 });

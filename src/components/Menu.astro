@@ -10,7 +10,11 @@
 
 	// Close the nav when clicking outside of it
 	document.addEventListener('click', (e) => {
-		if (e.target.closest('#primary_nav') || e.target.closest('#hamburger')) return;
+		if (
+			(e.target as Element)?.closest('#primary_nav') ||
+			(e.target as Element)?.closest('#hamburger')
+		)
+			return;
 		toggle_btn.setAttribute('aria-expanded', 'false');
 		nav.classList.remove('open');
 	});
@@ -34,7 +38,8 @@
 					class="fill-pink-700 group-aria-[expanded='true']:fill-pink-100"
 				>
 					<rect class="line top" width="100" height="10" rx="5" x="0" y="15"></rect>
-					<rect class="line middle" width="100" height="10" rx="5" x="0" y="45"></rect>
+					<rect class="line middle middle-1" width="100" height="10" rx="5" x="0" y="45"></rect>
+					<rect class="line middle middle-2" width="100" height="10" rx="5" x="0" y="45"></rect>
 					<rect class="line bottom" width="100" height="10" rx="5" x="0" y="75"></rect>
 				</svg>
 			</button>
@@ -140,30 +145,34 @@
 		}
 
 		.line {
-			transition: y 200ms ease-in 200ms, rotate 200ms ease-in, opacity 0ms 200ms;
-			transform-origin: center;
+			transition: translate 200ms ease-in 200ms, rotate 200ms ease-in, opacity 0ms 200ms;
+			translate: 0 0;
+			transform-origin: center center;
 		}
 
 		&[aria-expanded='true'] {
 			background: theme('colors.rose.500');
 
 			.line {
-				transition: y 200ms ease-in, rotate 200ms ease-in 200ms, opacity 0ms 200ms;
-			}
-
-			.top,
-			.bottom {
-				y: 45;
+				transition: translate 200ms ease-in, rotate 200ms ease-in 200ms, opacity 0ms 200ms;
 			}
 
 			.top {
-				rotate: 45deg;
-			}
-			.middle {
+				translate: 0 30px;
 				opacity: 0;
+				/* y: 45; */
 			}
 			.bottom {
+				translate: 0 -30px;
+				opacity: 0;
+				/* y: 45; */
+			}
+
+			.middle-1 {
 				rotate: -45deg;
+			}
+			.middle-2 {
+				rotate: 45deg;
 			}
 		}
 	}
