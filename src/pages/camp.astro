@@ -13,7 +13,13 @@ import horse_img from '$src/assets/imgs/horse.jpg';
 
 <Layout title="Camp">
 	<header class="wrapper">
-		<Image src={campheader_img} width={2000} alt="Kids hanging on a bar" class="hero_img" />
+		<Image
+			src={campheader_img}
+			width={2000}
+			alt="Kids hanging on a bar"
+			class="hero_img"
+			loading="eager"
+		/>
 
 		<h1 class="gradient_text bg-gradient-to-r from-sky-500 to-emerald-500 page_title">Camp</h1>
 	</header>

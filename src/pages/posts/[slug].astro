@@ -33,7 +33,13 @@ const { Content } = await entry.render();
 			{
 				entry.data.featured_img && (
 					<div class="mt-0 mb-9">
-						<Image src={entry.data.featured_img} alt={entry.data.title} width={960} class="mt-0 " />
+						<Image
+							src={entry.data.featured_img}
+							alt={entry.data.title}
+							width={960}
+							class="mt-0"
+							loading="eager"
+						/>
 					</div>
 				)
 			}
