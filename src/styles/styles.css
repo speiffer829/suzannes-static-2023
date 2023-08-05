@@ -15,14 +15,49 @@
 @font-face {
 	font-family: 'moranga';
 	src: url('/fonts/moranga-black-italic.woff2') format('woff2');
-	font-weight: black;
+	font-weight: 900;
 	font-style: italic;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'moranga';
 	src: url('/fonts/moranga-black.woff2') format('woff2');
-	font-weight: black;
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Poppins';
+	src: url('/fonts/Poppins-Bold.woff2') format('woff2');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Poppins';
+	src: url('/fonts/Poppins-BoldItalic.woff2') format('woff2');
+	font-weight: bold;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Poppins';
+	src: url('/fonts/Poppins-MediumItalic.woff2') format('woff2');
+	font-weight: medium;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Poppins';
+	src: url('/fonts/Poppins-Medium.woff2') format('woff2');
+	font-weight: medium;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Barlow Condensed';
+	src: url('/fonts/BarlowCondensed-Regular.woff2') format('woff2');
+	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
@@ -183,6 +218,29 @@
 		@screen lg {
 			font-size: theme('fontSize.7xl');
 		}
+	}
+
+	.spray_gradient {
+		background: radial-gradient(
+				circle at top left,
+				theme('colors.amber.500') 0.3ch,
+				transparent 2ch
+			),
+			radial-gradient(circle at bottom right, theme('colors.rose.400') 0.3ch, transparent 3ch),
+			theme('colors.pink.500');
+
+		background-repeat: no-repeat;
+		background-clip: text;
+		color: #fff;
+		font-weight: bold;
+	}
+
+	.contact_gradient {
+		background: radial-gradient(circle at top left, theme('colors.amber.100'), transparent),
+			radial-gradient(circle at bottom right, theme('colors.cyan.100'), transparent),
+			theme('colors.pink.500');
+		box-shadow: theme('boxShadow.lg');
+		border-radius: theme('borderRadius.xl');
 	}
 }
 

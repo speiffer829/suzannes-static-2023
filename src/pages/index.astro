@@ -15,7 +15,13 @@ const maybe_merch = await getImage({ src: maybe_merch_img, format: 'webp', width
 <Layout>
 	<header style="--bg-img: url('/imgs/holding.webp')" class="flex flex-col justify-end bg-pink-50">
 		<div class="wrapper">
-			<Image src={holding_img} alt="Suzanne's Dance & Gymnastics" class="hero_img" />
+			<Image
+				src={holding_img}
+				width={1475}
+				alt="Suzanne's Dance & Gymnastics"
+				class="hero_img"
+				loading="eager"
+			/>
 		</div>
 	</header>
 
@@ -214,7 +220,7 @@ const maybe_merch = await getImage({ src: maybe_merch_img, format: 'webp', width
 	</main>
 </Layout>
 
-<style>
+<style is:inline>
 	.main-ctas {
 		a {
 			.icon {
@@ -222,7 +228,7 @@ const maybe_merch = await getImage({ src: maybe_merch_img, format: 'webp', width
 				max-width: 100%;
 				margin: 0 auto;
 				aspect-ratio: 1/1;
-				border-radius: theme('borderRadius.full');
+				border-radius: 100px;
 				border: solid 4px currentColor;
 				display: block;
 				display: flex;
@@ -243,34 +249,5 @@ const maybe_merch = await getImage({ src: maybe_merch_img, format: 'webp', width
 				}
 			}
 		}
-	}
-
-	.spray_gradient {
-		background: radial-gradient(
-				circle at top left,
-				theme('colors.amber.500') 0.3ch,
-				transparent 2ch
-			),
-			radial-gradient(circle at bottom right, theme('colors.rose.400') 0.3ch, transparent 3ch),
-			theme('colors.pink.500');
-
-		background-repeat: no-repeat;
-		background-clip: text;
-		color: #fff;
-		font-weight: bold;
-	}
-
-	.gradient_btn {
-		background: radial-gradient(circle at top left, theme('colors.amber.500'), transparent),
-			radial-gradient(circle at bottom right, theme('colors.rose.400'), transparent),
-			theme('colors.pink.500');
-	}
-
-	.contact_gradient {
-		background: radial-gradient(circle at top left, theme('colors.amber.100'), transparent),
-			radial-gradient(circle at bottom right, theme('colors.cyan.100'), transparent),
-			theme('colors.pink.500');
-		box-shadow: theme('boxShadow.lg');
-		border-radius: theme('borderRadius.xl');
 	}
 </style>

@@ -12,7 +12,7 @@ const { title = "Suzanne's Dance" } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="Suzanne's Dance & Gymnastics School" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png" />
 		<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png" />
@@ -28,19 +28,13 @@ const { title = "Suzanne's Dance" } = Astro.props;
 		<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png" />
 		<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
 		<link rel="manifest" href="favicon/manifest.json" />
-		<meta name="msapplication-TileColor" content="#eac8df" />
+		<meta name="msapplication-TileColor" content="rgb(253, 242, 248)" />
 		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
-		<meta name="theme-color" content="#eac8df" />
+		<meta name="theme-color" content="rgb(253, 242, 248)" />
 		<meta name="generator" content={Astro.generator} />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;1,200&family=Poppins:wght@500;700;900&display=swap"
-			rel="stylesheet"
-		/>
 		<title>{title === "Suzanne's Dance" ? "Suzanne's Dance" : `${title} | Suzanne's Dance`}</title>
 	</head>
-	<body class="bg-pink-50 pt">
+	<body class="bg-pink-50">
 		<header>
 			<Menu />
 		</header>
