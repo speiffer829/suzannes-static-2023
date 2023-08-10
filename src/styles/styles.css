@@ -231,7 +231,17 @@
 
 		background-repeat: no-repeat;
 		background-clip: text;
-		color: #fff;
+		color: theme('colors.pink.500');
+		font-weight: bold;
+	}
+	.spray_gradient2 {
+		background: radial-gradient(circle at top left, theme('colors.rose.400') 0.3ch, transparent 2ch),
+			radial-gradient(circle at bottom right, theme('colors.rose.400') 0.5ch, transparent 3ch),
+			theme('colors.pink.500');
+
+		background-repeat: no-repeat;
+		background-clip: text;
+		color: theme('colors.pink.500');
 		font-weight: bold;
 	}
 

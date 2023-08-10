@@ -11,7 +11,7 @@ interface PropsType {
 const { img_side = 'left', img, img_alt, title, subtitle }: PropsType = Astro.props;
 ---
 
-<div class="stripe" class:list={img_side}>
+<div class="stripe" class:list={[img_side]}>
 	<div
 		class="wrapper grid justify-center lg:grid-cols-2 grid-flow-dense gap-10 lg:gap-20 items-center"
 	>
@@ -25,7 +25,7 @@ const { img_side = 'left', img, img_alt, title, subtitle }: PropsType = Astro.pr
 		<div class="@container">
 			<header class="mb-6">
 				<h2
-					class="text-3xl @md:text-4xl @lg:text-5xl italic gradient_text bg-gradient-to-br from-pink-600 to-rose-300 font-fancy font-black"
+					class="text-3xl @md:text-4xl @lg:text-5xl italic gradient_text bg-gradient-to-t to-pink-500 from-rose-300 text-pink-500 font-fancy font-black w-fit p-1"
 				>
 					{title}
 				</h2>

@@ -9,7 +9,7 @@ import fosse_img from '$src/assets/imgs/fosse.jpg';
 
 <Layout title="Blog">
 	<div class="wrapper">
-		<header class="wrapper">
+		<header>
 			<Image
 				src={fosse_img}
 				width={2000}
@@ -27,13 +27,13 @@ import fosse_img from '$src/assets/imgs/fosse.jpg';
 		<ul class="max-w-3xl mx-auto my-14">
 			{
 				blog_entries.map((entry) => (
-					<li class="my-5 bg-white shadow-lg rounded-xl p-5 flex gap-5">
-						{entry.data.featured_img && (
+					<li class="my-5 bg-white shadow-lg rounded-xl p-5 xs:flex gap-5">
+						{(entry.data.featured_img as ImageMetadata) && (
 							<Image
 								src={entry.data.featured_img}
 								width={150}
 								alt={entry.data.title}
-								className="aspect-video object-cover rounded-lg shadow-md"
+								className="aspect-square xs:aspect-video object-cover rounded-lg shadow-md mx-auto sm:mx-0 mb-4 sm:mb-0 block"
 							/>
 						)}
 						<div>
