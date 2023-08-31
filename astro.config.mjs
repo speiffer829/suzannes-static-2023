@@ -8,8 +8,5 @@ import mdx from '@astrojs/mdx';
 export default defineConfig({
 	site: 'http://meantime.spenserpeiffer.com',
 	integrations: [tailwind(), sitemap(), mdx()],
-	experimental: {
-		assets: true
-	},
 	build: {}
 });

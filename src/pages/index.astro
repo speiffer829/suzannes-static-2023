@@ -8,6 +8,7 @@ import snapping_img from '$src/assets/imgs/snapping.webp';
 import multibarhang_img from '$src/assets/imgs/multibarhang.webp';
 import maybe_merch_img from '$src/assets/imgs/maybe_merch.webp';
 import map_img from '$src/assets/imgs/map.webp';
+import jazz_img from '$src/assets/imgs/jazz.jpg';
 
 const maybe_merch = await getImage({ src: maybe_merch_img, format: 'webp', width: 700 });
 ---
@@ -34,13 +35,16 @@ const maybe_merch = await getImage({ src: maybe_merch_img, format: 'webp', width
 					width={750}
 					quality={100}
 					class="w-full object-cover object-center h-80 grayscale"
-					src={snapping_img}
-					alt="Map"
+					src={jazz_img}
+					alt="Two Girls Dancing"
+					transition:name="classes_header"
 				/>
 			</div>
 
 			<div class="p-4 text-center flex flex-[2] flex-col justify-center py-8 px-4">
-				<h3 class="text-4xl font-black font-fancy">Classes</h3>
+				<h3 class="text-4xl font-black font-fancy" transition:name="classes_header_text">
+					Classes
+				</h3>
 				<a
 					href="/classes"
 					title="Learn More About Available Classes."
@@ -57,7 +61,7 @@ const maybe_merch = await getImage({ src: maybe_merch_img, format: 'webp', width
 					quality={100}
 					class="w-full object-cover object-center h-80 grayscale"
 					src={multibarhang_img}
-					alt="Map"
+					alt="Kids hanging on a bar"
 					loading="lazy"
 				/>
 			</div>
