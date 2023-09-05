@@ -1,9 +1,11 @@
 ---
 import Layout from '$src/layouts/Layout.astro';
-import { Image, getImage } from 'astro:assets';
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 export async function getStaticPaths() {
-	const posts_entries = await getCollection('posts');
+	const posts_entries = await getCollection('posts', ({ data }) => {
+		return import.meta.env.PROD ? data.draft !== true : true;
+	});
 	return posts_entries.map((entry) => ({ params: { slug: entry.slug }, props: { entry } }));
 }
 

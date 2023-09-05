@@ -2,7 +2,9 @@
 import Layout from '$src/layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
-const blog_entries = await getCollection('posts');
+const blog_entries = await getCollection('posts', ({ data }) => {
+  return data.draft !== true;
+});;
 
 import fosse_img from '$src/assets/imgs/fosse.jpg';
 ---
