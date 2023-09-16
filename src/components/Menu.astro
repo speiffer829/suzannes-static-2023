@@ -1,23 +1,40 @@
 <script>
-	const toggle_btn = document.querySelector('#hamburger');
-	const nav = document.querySelector('#primary_nav');
+	
 
-	toggle_btn.addEventListener('click', () => {
+
+	document.addEventListener('astro:page-load', () => {
+		init_menu()
+	})
+	
+function init_menu() {
+	let toggle_btn = document.querySelector('#hamburger')
+	let nav = document.querySelector('#primary_nav')
+	toggle_btn.addEventListener('click', handle_btn_click);
+	
+	document.addEventListener('click', handle_outstide_click);
+
+	function handle_btn_click(){
+		console.log('click');
 		const expanded = toggle_btn.getAttribute('aria-expanded') === 'true';
 		toggle_btn.setAttribute('aria-expanded', `${!expanded}`);
 		nav.classList.toggle('open');
-	});
+	}
 
-	// Close the nav when clicking outside of it
-	document.addEventListener('click', (e) => {
+	function handle_outstide_click(e){
 		if (
-			(e.target as Element)?.closest('#primary_nav') ||
-			(e.target as Element)?.closest('#hamburger')
-		)
-			return;
-		toggle_btn.setAttribute('aria-expanded', 'false');
-		nav.classList.remove('open');
-	});
+					(e.target)?.closest('#primary_nav') ||
+					(e.target)?.closest('#hamburger')
+				)
+					return;
+				toggle_btn.setAttribute('aria-expanded', 'false');
+				nav.classList.remove('open');
+	}
+}
+	
+
+	init_menu()
+
+
 </script>
 
 <div class="fixed w-full top-3 isolate z-50 px-4">
