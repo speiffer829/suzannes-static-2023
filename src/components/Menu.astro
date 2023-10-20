@@ -8,7 +8,7 @@ function init_menu() {
 	document.addEventListener('click', handle_outstide_click);
 	
 	function handle_btn_click(){
-
+		if(window.innerWidth > 1280)return;
 		
 		const expanded = toggle_btn.getAttribute('aria-expanded') === 'true';
 		if(!expanded){
@@ -31,7 +31,7 @@ function init_menu() {
 					(e.target)?.closest('#hamburger')
 				)
 					return;
-				handle_btn_click();
+				if(toggle_btn.getAttribute('aria-expanded') === 'true')handle_btn_click();
 	}
 }
 	
