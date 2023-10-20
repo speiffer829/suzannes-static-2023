@@ -29,43 +29,45 @@ import fosse_img from '$src/assets/imgs/fosse.jpg';
 		<ul class="max-w-3xl mx-auto my-14">
 			{
 				blog_entries.map((entry) => (
-					<li class="my-5 bg-white shadow-lg rounded-xl p-5 xs:flex gap-5">
-						{(entry.data.featured_img as ImageMetadata) && (
-							<Image
-								src={entry.data.featured_img}
-								width={150}
-								alt={entry.data.title}
-								className="aspect-square xs:aspect-video object-cover rounded-lg shadow-md mx-auto sm:mx-0 mb-4 sm:mb-0 block"
-							/>
-						)}
-						<div>
-							<h2 class="font-fancy font-bold text-3xl">{entry.data.title}</h2>
-							<p class="text-gray-500">{entry.data.date}</p>
-							<a
-								class="text-pink-500 flex gap-1 items-center group hover:text-rose-400 underline mt-4"
-								href={`/posts/${entry.slug}`}
-							>
-								Read This Post
-								<svg
-									class="transition-all duration-300 group-hover:translate-x-2"
-									xmlns="http://www.w3.org/2000/svg"
-									width="18"
-									height="18"
-									viewBox="0 0 24 24"
-									fill="none"
-									stroke="currentColor"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									class="lucide lucide-arrow-right"
+					<li class="">
+						<a href={`/posts/${entry.slug}`} class="my-5 bg-white shadow-lg rounded-xl p-5 xs:flex gap-5 group">
+							{(entry.data.featured_img as ImageMetadata) && (
+								<Image
+									src={entry.data.featured_img}
+									width={150}
+									alt={entry.data.title}
+									className="aspect-square xs:aspect-video object-cover rounded-lg shadow-md mx-auto sm:mx-0 mb-4 sm:mb-0 block"
+								/>
+							)}
+							<div>
+								<h2 class="font-fancy font-bold text-3xl">{entry.data.title}</h2>
+								<p class="text-gray-500">{entry.data.date}</p>
+								<span
+									class="text-pink-500 flex gap-1 items-center group-hover:text-rose-400 underline mt-4"
+									
 								>
-									<>
-										<path d="M5 12h14" />
-										<path d="m12 5 7 7-7 7" />
-									</>
-								</svg>
-							</a>
-						</div>
+									Read This Post
+									<svg
+										class="transition-all duration-300 group-hover:translate-x-2"
+										xmlns="http://www.w3.org/2000/svg"
+										width="18"
+										height="18"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										class="lucide lucide-arrow-right"
+									>
+										<>
+											<path d="M5 12h14" />
+											<path d="m12 5 7 7-7 7" />
+										</>
+									</svg>
+								</>
+							</div>
+						</a>
 					</li>
 				))
 			}

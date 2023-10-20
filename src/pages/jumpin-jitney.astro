@@ -1,6 +1,6 @@
 ---
 import Layout from '$src/layouts/Layout.astro';
-import { Image } from 'astro:assets';
+import { Image, Picture } from 'astro:assets';
 import Stripe from '$src/components/Stripe.astro';
 
 import multibarhang_img from '$src/assets/imgs/multibarhang.jpg';
@@ -13,9 +13,10 @@ import tramp_img from '$src/assets/imgs/tramp.jpg';
 
 <Layout title="Jumpin' Jitney">
 	<header class="wrapper">
-		<Image
+		<Picture
 			src={multibarhang_img}
-			width={2000}
+			formats={['avif', 'webp']}
+			widths={[300, 400, 650, 2000]}
 			alt="Kids hanging on a bar"
 			class="hero_img"
 			loading="eager"

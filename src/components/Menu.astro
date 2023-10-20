@@ -1,23 +1,28 @@
 <script>
 	
-
-
-	document.addEventListener('astro:page-load', () => {
-		init_menu()
-	})
-	
 function init_menu() {
 	let toggle_btn = document.querySelector('#hamburger')
 	let nav = document.querySelector('#primary_nav')
 	toggle_btn.addEventListener('click', handle_btn_click);
 	
 	document.addEventListener('click', handle_outstide_click);
-
+	
 	function handle_btn_click(){
-		console.log('click');
+
+		
 		const expanded = toggle_btn.getAttribute('aria-expanded') === 'true';
-		toggle_btn.setAttribute('aria-expanded', `${!expanded}`);
+		if(!expanded){
+			const scrollY = window.scrollY;
+			document.body.dataset.scrollY = `${scrollY}`;
+			document.body.style.top = `-${scrollY}px`;
+			document.body.classList.add('no-scroll')
+		}else{
+			document.body.classList.remove('no-scroll');
+			const scrollY = document.body.dataset.scrollY;
+			window.scrollTo(0, parseInt(scrollY));
+		}
 		nav.classList.toggle('open');
+		toggle_btn.setAttribute('aria-expanded', `${!expanded}`);
 	}
 
 	function handle_outstide_click(e){
@@ -26,8 +31,7 @@ function init_menu() {
 					(e.target)?.closest('#hamburger')
 				)
 					return;
-				toggle_btn.setAttribute('aria-expanded', 'false');
-				nav.classList.remove('open');
+				handle_btn_click();
 	}
 }
 	

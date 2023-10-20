@@ -1,6 +1,6 @@
 ---
 import Layout from '$src/layouts/Layout.astro';
-import { Image } from 'astro:assets';
+import { Image, Picture } from 'astro:assets';
 import Stripe from '$src/components/Stripe.astro';
 
 import snapping_img from '$src/assets/imgs/snapping.jpg';
@@ -15,9 +15,10 @@ import flip_img from '$src/assets/imgs/acrowithmyback.jpg';
 
 <Layout title="Classes">
 	<header class="wrapper">
-		<Image
+		<Picture
 			src={jazz_img}
-			width={2000}
+			formats={['avif', 'webp']}
+			widths={[300, 400, 650, 2000]}
 			alt="Girls laughing and having fun."
 			class="hero_img"
 			loading="eager"

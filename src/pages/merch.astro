@@ -1,6 +1,6 @@
 ---
 import Layout from '$src/layouts/Layout.astro';
-import { Image } from 'astro:assets';
+import { Image, Picture } from 'astro:assets';
 import Stripe from '$src/components/Stripe.astro';
 
 import bwglasses_img from '$src/assets/imgs/bwglasses.jpg';
@@ -13,9 +13,10 @@ import jazzshoe_img from '$src/assets/imgs/jazzshoes.jpg';
 
 <Layout title="Merch">
 	<header class="wrapper">
-		<Image
+		<Picture
 			src={bwglasses_img}
-			width={2000}
+			formats={['avif', 'webp']}
+			widths={[300, 400, 650, 2000]}
 			alt="Suzanne's Brand Sunglasses"
 			class="hero_img"
 			loading="eager"
@@ -37,12 +38,6 @@ import jazzshoe_img from '$src/assets/imgs/jazzshoes.jpg';
 				Leotards are expected to be worn in all classes except Bouncin' Bunnies. They come in many
 				sizes varying from extra-small child to extra-large adult.
 			</p>
-			<ul class="text-lg leading-loose list-disc pl-4">
-				<li>Child Leotard - $40</li>
-				<li>Adult Leotard - $40</li>
-				<li>Child Tights - $11</li>
-				<li>Adult Tights - $13</li>
-			</ul>
 		</Stripe>
 
 		<Stripe
@@ -56,10 +51,7 @@ import jazzshoe_img from '$src/assets/imgs/jazzshoes.jpg';
 				Gymnastics Shoes will be expected for gymnastics, acrobatics, and dance/acrobatics classes.
 			</p>
 
-			<ul class="text-lg leading-loose list-disc pl-4">
-				<li>Leather - $25</li>
-				<li>Suede - $60</li>
-			</ul>
+			
 		</Stripe>
 
 		<Stripe
@@ -74,9 +66,7 @@ import jazzshoe_img from '$src/assets/imgs/jazzshoes.jpg';
 				classes.
 			</p>
 
-			<ul class="text-lg leading-loose list-disc pl-4">
-				<li>Any Size - $25</li>
-			</ul>
+		
 		</Stripe>
 
 		<Stripe
@@ -90,10 +80,6 @@ import jazzshoe_img from '$src/assets/imgs/jazzshoes.jpg';
 				Ballet shoes will be required for any tap, ballet, and acrobatics classes, jazz classes, and
 				also for tap and ballet classes.
 			</p>
-
-			<ul class="text-lg leading-loose list-disc pl-4">
-				<li>Any Size - $25</li>
-			</ul>
 		</Stripe>
 
 		<Stripe
@@ -105,9 +91,6 @@ import jazzshoe_img from '$src/assets/imgs/jazzshoes.jpg';
 		>
 			<p class="text-lg leading-loose mb-4">Jazz shoes will be needed for jazz class.</p>
 
-			<ul class="text-lg leading-loose list-disc pl-4">
-				<li>Any Size - $38</li>
-			</ul>
 		</Stripe>
 	</main>
 </Layout>
