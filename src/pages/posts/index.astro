@@ -1,6 +1,6 @@
 ---
 import Layout from '$src/layouts/Layout.astro';
-import { Image } from 'astro:assets';
+import { Image, Picture } from 'astro:assets';
 import { getCollection } from 'astro:content';
 const blog_entries = await getCollection('posts', ({ data }) => {
   return data.draft !== true;
@@ -12,12 +12,14 @@ import fosse_img from '$src/assets/imgs/fosse.jpg';
 <Layout title="Blog">
 	<div class="wrapper">
 		<header>
-			<Image
+			<Picture
 				src={fosse_img}
-				width={2000}
-				alt="Dog looking at some blog posts"
+				formats={['avif', 'webp']}
+				widths={[300, 400, 650, 2000]}
+				alt="Fosse the dog working on his computer"
 				class="hero_img"
 				loading="eager"
+				transition:name="bus_header"
 			/>
 
 			<h1
@@ -32,11 +34,13 @@ import fosse_img from '$src/assets/imgs/fosse.jpg';
 					<li class="">
 						<a href={`/posts/${entry.slug}`} class="my-5 bg-white shadow-lg rounded-xl p-5 xs:flex gap-5 group">
 							{(entry.data.featured_img as ImageMetadata) && (
-								<Image
+								<Picture
 									src={entry.data.featured_img}
-									width={150}
+									formats={['avif', 'webp']}
+									widths={[300, 400, 650, 2000]}
 									alt={entry.data.title}
-									className="aspect-square xs:aspect-video object-cover rounded-lg shadow-md mx-auto sm:mx-0 mb-4 sm:mb-0 block"
+									class="hero_img"
+									loading="eager"
 								/>
 							)}
 							<div>
