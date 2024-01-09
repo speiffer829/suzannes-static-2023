@@ -6,8 +6,20 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				primary: ['Poppins', 'sans-serif'],
-				condensed: ['Barlow Condensed', 'League Gothic', 'Roboto Condensed', 'sans-serif'],
+				condensed: [
+					'Barlow Condensed',
+					'ui-monospace',
+					'Cascadia Code',
+					'Source Code Pro',
+					'Menlo',
+					'Consolas',
+					'DejaVu Sans Mono',
+					'monospace'
+				],
 				fancy: ['moranga', 'serif']
+			},
+			screens: {
+				'3xl': '1920px'
 			}
 		},
 		screens: {

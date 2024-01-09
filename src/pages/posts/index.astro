@@ -10,7 +10,7 @@ import fosse_img from '$src/assets/imgs/fosse.jpg';
 ---
 
 <Layout title="Blog">
-	<div class="wrapper">
+	<div class="content_grid">
 		<header>
 			<Picture
 				src={fosse_img}
@@ -39,7 +39,7 @@ import fosse_img from '$src/assets/imgs/fosse.jpg';
 									formats={['avif', 'webp']}
 									widths={[300, 400, 650, 2000]}
 									alt={entry.data.title}
-									class="hero_img"
+									class="aspect-square xs:aspect-video object-cover rounded-lg shadow-md mx-auto sm:mx-0 mb-4 sm:mb-0 block sm:w-40"
 									loading="eager"
 								/>
 							)}

@@ -12,13 +12,13 @@ import tramp_img from '$src/assets/imgs/tramp.jpg';
 ---
 
 <Layout title="Jumpin' Jitney">
-	<header class="wrapper">
+	<header class="content_grid">
 		<Picture
 			src={multibarhang_img}
 			formats={['avif', 'webp']}
 			widths={[300, 400, 650, 2000]}
 			alt="Kids hanging on a bar"
-			class="hero_img"
+			class="hero_img breakout"
 			loading="eager"
 			transition:name="bus_header"
 		/>
@@ -31,7 +31,7 @@ import tramp_img from '$src/assets/imgs/tramp.jpg';
 		</h1>
 	</header>
 
-	<main>
+	<main class="content_grid">
 		<Stripe
 			img={hidden_img}
 			img_alt="snapping image"
@@ -113,7 +113,7 @@ import tramp_img from '$src/assets/imgs/tramp.jpg';
 		</Stripe>
 	</main>
 
-	<div class="wrapper mb-20">
+	<div class="mb-20 content_grid">
 		<div
 			class="card col-span-full px-4 py-6 md:flex justify-between items-center bg-gradient-to-b from-blue-200 to-sky-100 flex-wrap"
 		>

@@ -77,6 +77,7 @@
 		font-family: theme('fontFamily.primary');
 		min-height: 100dvh;
 		padding-top: 120px;
+		background-color: theme('colors.pink.50');
 	}
 
 	.no-scroll {
@@ -96,6 +97,33 @@
 	img {
 		width: max(auto, 100%);
 		display: block;
+	}
+
+	.content_grid,
+	.full_width {
+		--padding-inline: theme('spacing.8');
+		--content-max-width: theme('maxWidth.screen-2xl');
+		--breakout-max-width: theme('maxWidth.screen-3xl');
+
+		display: grid;
+		grid-template-columns:
+			[full-width-start] minmax(var(--padding-inline), 1fr)
+			[breakout-start] minmax(0, var(--breakout-max-width))
+			[content-start] min(100% - var(--padding-inline) * 2, var(--content-max-width)) [content-end]
+			minmax(0, var(--breakout-max-width)) [breakout-end]
+			minmax(var(--padding-inline), 1fr) [full-width-end];
+
+		.breakout {
+			grid-column: breakout;
+		}
+
+		.full_width {
+			grid-column: full-width;
+		}
+
+		& > :not(.breakout, .full_width) {
+			grid-column: content;
+		}
 	}
 
 	.wrapper {
