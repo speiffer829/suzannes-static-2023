@@ -4,11 +4,15 @@ import { Image, Picture } from 'astro:assets';
 import Stripe from '$src/components/Stripe.astro';
 import CampCards from '$src/components/CampCards.astro';
 
+import db from '$src/db.json';
+
 import campheader_img from '$src/assets/imgs/campheader.jpg';
 import raven_img from '$src/assets/imgs/raven.jpg';
 import jrcamp_img from '$src/assets/imgs/jrcamp.jpg';
 import slipnslide_img from '$src/assets/imgs/slipnslide.jpg';
 import horse_img from '$src/assets/imgs/horse.jpg';
+
+const { prices } = db;
 ---
 
 <Layout title="Camp">
@@ -41,7 +45,7 @@ import horse_img from '$src/assets/imgs/horse.jpg';
 			<p class="text-lg leading-loose">
 				Suzanne's Gymnastics Camp will consist of 6 hours of organized instruction a day. The cost
 				of one week of fun, fitness, and instruction by Nikki, Jessie, and other qualified
-				instructors will be <strong class="font-bold text-pink-600">$170.</strong>
+				instructors will be <strong class="font-bold text-pink-600">${prices.senior_camp}.</strong>
 			</p>
 		</Stripe>
 		<Stripe
@@ -55,7 +59,7 @@ import horse_img from '$src/assets/imgs/horse.jpg';
 			<p class="text-lg leading-loose">
 				Suzanne's Jr. Gymnastics Camp will consist of 3 hours of organized instruction a day. The
 				cost of one week of fun, fitness, and instruction by Nikki, Jessie, and other qualified
-				instructors will be <strong class="font-bold text-pink-600">$85.</strong>
+				instructors will be <strong class="font-bold text-pink-600">${prices.junior_camp}.</strong>
 			</p>
 		</Stripe>
 

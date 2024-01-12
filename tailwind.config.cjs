@@ -6,7 +6,15 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				primary: ['Poppins', 'sans-serif'],
-				condensed: ['Barlow Condensed', 'League Gothic', 'Roboto Condensed', 'sans-serif'],
+				condensed: [
+					'Barlow Condensed',
+					'Bahnschrift',
+					'DIN Alternate',
+					'Franklin Gothic Medium',
+					'Nimbus Sans Narrow',
+					'sans-serif-condensed',
+					'sans-serif'
+				],
 				fancy: ['moranga', 'serif']
 			}
 		},

@@ -39,15 +39,15 @@ import fosse_img from '$src/assets/imgs/fosse.jpg';
 									formats={['avif', 'webp']}
 									widths={[300, 400, 650, 2000]}
 									alt={entry.data.title}
-									class="hero_img"
+									class="rounded-xl aspect-square object-cover w-32"
 									loading="eager"
 								/>
 							)}
-							<div>
+							<div class="grid items-start content-start">
 								<h2 class="font-fancy font-bold text-3xl">{entry.data.title}</h2>
 								<p class="text-gray-500">{entry.data.date}</p>
 								<span
-									class="text-pink-500 flex gap-1 items-center group-hover:text-rose-400 underline mt-4"
+									class="text-pink-500 flex gap-1 group-hover:text-rose-400 underline mt-4 self-end items-center"
 									
 								>
 									Read This Post

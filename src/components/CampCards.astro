@@ -1,6 +1,7 @@
 ---
-import dates from '$src/dates.json';
+import db from '$src/db.json';
 const { classes, show_btns = true } = Astro.props;
+const { camp_dates: dates, prices } = db
 ---
 
 <article class="camp-card" class:list={classes}>
@@ -35,7 +36,10 @@ const { classes, show_btns = true } = Astro.props;
 		</div>
 
 		<h3>{dates.year} Senior Camp #1</h3>
-		<p class="ages">2nd Grade And Up</p>
+		<div class="flex gap-4 justify-center">
+			<p class="ages bg-white  items-center border-r-2 border-slate-600 pr-4">2nd Grade And Up</p>
+			<p class="bg-white flex-shrink-0 flex-grow-0">${prices.senior_camp}</p>
+		</div>
 		{
 			show_btns && (
 				<a
@@ -81,7 +85,10 @@ const { classes, show_btns = true } = Astro.props;
 				>
 			</div>
 			<h3>{dates.year} Senior Camp #2</h3>
-			<p class="ages">2nd Grade And Up</p>
+			<div class="flex gap-4 justify-center">
+			<p class="ages bg-white  items-center border-r-2 border-slate-600 pr-4">2nd Grade And Up</p>
+			<p class="bg-white flex-shrink-0 flex-grow-0">${prices.senior_camp}</p>
+		</div>
 		</div>
 		{
 			show_btns && (
@@ -127,7 +134,10 @@ const { classes, show_btns = true } = Astro.props;
 				>
 			</div>
 			<h3>{dates.year} Junior Camp</h3>
-			<p class="ages">Ages 4 to 8 Years Old</p>
+			<div class="flex gap-4 justify-center">
+			<p class="ages bg-white  items-center border-r-2 border-slate-600 pr-4">Ages 4 to 8 Years Old</p>
+			<p class="bg-white flex-shrink-0 flex-grow-0">${prices.junior_camp}</p>
+		</div>
 		</div>
 		{
 			show_btns && (

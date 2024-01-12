@@ -96,6 +96,7 @@
 	img {
 		width: max(auto, 100%);
 		display: block;
+		background: linear-gradient(to bottom right, theme('colors.pink.200'), theme('colors.sky.200'));
 	}
 
 	.wrapper {
