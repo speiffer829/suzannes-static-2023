@@ -8,6 +8,7 @@ module.exports = {
 				primary: ['Poppins', 'sans-serif'],
 				condensed: [
 					'Barlow Condensed',
+					'Roboto Condensed',
 					'Bahnschrift',
 					'DIN Alternate',
 					'Franklin Gothic Medium',
