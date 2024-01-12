@@ -14,8 +14,8 @@ const { Content } = await entry.render();
 ---
 
 <Layout title={entry.data.title}>
-	<article class="wrapper blog_wrapper">
-		<header class="mb-7">
+	<article class=" blog_wrapper">
+		<header class="mb-7 content_wrapper">
 			<a href="/posts" class="btn text-white text-xs flex items-center gap-2 mx-0">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -34,15 +34,13 @@ const { Content } = await entry.render();
 			</a>
 			{
 				entry.data.featured_img && (
-					<div class="mt-0 mb-9">
-						<Image
-							src={entry.data.featured_img}
-							alt={entry.data.title}
-							width={960}
-							class="mt-0"
-							loading="eager"
-						/>
-					</div>
+					<Image
+						src={entry.data.featured_img}
+						alt={entry.data.title}
+						width={960}
+						class="mt-0 mb-9 aspect-video object-cover breakout"
+						loading="eager"
+					/>
 				)
 			}
 			<div class="border-b-2 border-pink-500">
@@ -61,7 +59,7 @@ const { Content } = await entry.render();
 				</h1>
 			</div>
 		</header>
-		<main>
+		<main class="content_wrapper">
 			<Content />
 			<a href="/posts" class="btn text-white text-xs flex items-center gap-2 mx-0">
 				<svg
@@ -91,20 +89,9 @@ const { Content } = await entry.render();
 			font-size: theme('fontSize.lg');
 		}
 
-		*:not(span, .btn, img, :has(img)) {
-			max-width: 50rem;
-			margin-left: auto;
-			margin-right: auto;
-		}
+		
 
-		img,
-		*:has(img) {
-			margin-left: auto;
-			margin-right: auto;
-			@media (min-width: 768px) {
-				max-width: 960px;
-			}
-		}
+		
 		img {
 			border-radius: theme('borderRadius.lg');
 			box-shadow: theme('boxShadow.lg');
@@ -134,7 +121,7 @@ const { Content } = await entry.render();
 		}
 
 		p {
-			margin-bottom: theme('spacing.6');
+			margin-block: theme('spacing.3');
 			line-height: 2;
 		}
 
