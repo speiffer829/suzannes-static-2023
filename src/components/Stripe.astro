@@ -7,11 +7,12 @@ interface PropsType {
 	img_alt?: string;
 	title?: string;
 	subtitle?: string;
+	class?: string;
 }
-const { img_side = 'left', img, img_alt, title, subtitle }: PropsType = Astro.props;
+const { img_side = 'left', img, img_alt, title, subtitle, class: className = '' }: PropsType = Astro.props;
 ---
 
-<div class="stripe" class:list={[img_side]}>
+<div class="stripe py-24" class:list={[img_side, className]}>
 	<div
 		class="wrapper grid justify-center lg:grid-cols-2 grid-flow-dense gap-10 lg:gap-20 items-center"
 	>
@@ -45,7 +46,6 @@ const { img_side = 'left', img, img_alt, title, subtitle }: PropsType = Astro.pr
 
 <style>
 	.stripe {
-		padding: theme('spacing.24') 0;
 		text-align: left;
 
 		img {
