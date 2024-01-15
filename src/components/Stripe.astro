@@ -47,18 +47,48 @@ const { img_side = 'left', img, img_alt, title, subtitle, class: className = '' 
 <style>
 	.stripe {
 		text-align: left;
+		--animation-direction: -1;
 
 		img {
+			--animation-y: 100px;
+			--animation-x: 0px; 
+			
 			border-radius: theme('borderRadius.xl');
 			box-shadow: theme('boxShadow.lg');
+
+			@supports (animation-timeline: scroll()) {
+				 @media (prefers-reduced-motion: no-preference){
+					animation: pic-pop linear forwards;
+					animation-timeline: view();
+					animation-range-start: cover;
+					animation-range-end: 50%;
+				}
+			}
+
+			@screen lg {
+				--animation-y: 0px;
+				--animation-x: 100px;
+			}
 		}
 
 		.right_img {
+			--animation-direction: 1;
 			grid-row: -1 / span 1;
 
 			@screen lg {
 				grid-column: 2 / span 1;
 			}
+		}
+	}
+
+	@keyframes pic-pop {
+		from{
+			scale: .9 .9;
+			translate: calc(var(--animation-x) * var(--animation-direction)) var(--animation-y);
+		}
+		to {
+			scale: 1 1;
+			translate: 0 0;
 		}
 	}
 </style>

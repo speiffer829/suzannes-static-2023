@@ -2,6 +2,9 @@
 import Layout from '$src/layouts/Layout.astro';
 import { Image, Picture } from 'astro:assets';
 import Stripe from '$src/components/Stripe.astro';
+import db from '$src/db.json';
+
+const { prices } = db;
 
 import snapping_img from '$src/assets/imgs/snapping.jpg';
 import jazz_img from '$src/assets/imgs/jazz.jpg';
@@ -39,9 +42,9 @@ import flip_img from '$src/assets/imgs/acrowithmyback.jpg';
 			img_side="left"
 			title="Bouncin' Bunnies"
 			subtitle="1 year old to 3 years old"
-			class="!pt-0"
+			class="pt-0"
 		>
-			<p class="font-bold text-pink-600 mb-3">$13.00 For An Hour Class OR $49 a Month</p>
+			<p class="font-bold text-pink-600 mb-3">${prices.hour_class_per_class} For An Hour Class OR ${prices.hour_class_per_month} a Month</p>
 			<p class="text-lg leading-loose">
 				This is a "mommy and me" style class where the child is accompanied by a parent or guardian
 				(just one). The two of you will do a medley of activities designed to help aid the
@@ -58,10 +61,10 @@ import flip_img from '$src/assets/imgs/acrowithmyback.jpg';
 			classes={['pt-10']}
 		>
 			<p class="font-bold text-pink-600 mb-3">
-				2 1/2 to 6 Years Old: $13.00 For An Hour Class OR $49 a Month
+				2 1/2 to 6 Years Old: ${prices.gymnastics_younger_per_class} For An Hour Class OR ${prices.hour_class_per_month} a Month
 			</p>
 			<p class="font-bold text-pink-600 mb-3">
-				7 Years Old or 2nd Grade and Up: $18.50 For An Hour and a Half Class OR $70 a Month
+				7 Years Old or 2nd Grade and Up: ${prices.gymnastics_older_per_class} For An Hour and a Half Class OR ${prices.gymnastics_older_per_month} a Month
 			</p>
 			<p class="text-lg leading-loose">
 				This class is split up into different gymnastics skills: floor tumbling, uneven bars,
@@ -76,7 +79,7 @@ import flip_img from '$src/assets/imgs/acrowithmyback.jpg';
 			title="Tap, Ballet, & Acrobatics"
 			subtitle="Ages 2 1/2 to 6 Years Old"
 		>
-			<p class="font-bold text-pink-600 mb-3">$13.00 For An Hour Class OR $49 a Month</p>
+			<p class="font-bold text-pink-600 mb-3">${prices.hour_class_per_class} For An Hour Class OR ${prices.hour_class_per_month} a Month</p>
 			<p class="text-lg leading-loose">
 				<strong>If your child is 2, they must turn 3 by December 31st.</strong> This class mixes tap
 				for rhythm, ballet for poise, plus floor tumbling for body awareness and fun. This class can
@@ -91,7 +94,7 @@ import flip_img from '$src/assets/imgs/acrowithmyback.jpg';
 			title="Dance & Acrobatics"
 			subtitle="Ages 5 and Up"
 		>
-			<p class="font-bold text-pink-600 mb-3">$13.00 For An Hour Class OR $49 a Month</p>
+			<p class="font-bold text-pink-600 mb-3">${prices.hour_class_per_class} For An Hour Class OR ${prices.hour_class_per_month} a Month</p>
 			<p class="text-lg leading-loose">
 				This hour long class is divided in half; one half being dedicated to hip hop and jazz style
 				dance, and the other is devoted to floor tumbling. Gymnastics shoes and a leotard will
@@ -105,7 +108,7 @@ import flip_img from '$src/assets/imgs/acrowithmyback.jpg';
 			title="Tap & Ballet"
 			subtitle="Ages 7 and Up"
 		>
-			<p class="font-bold text-pink-600 mb-3">$13.00 For An Hour Class OR $49 a Month</p>
+			<p class="font-bold text-pink-600 mb-3">${prices.hour_class_per_class} For An Hour Class OR ${prices.hour_class_per_month} a Month</p>
 			<p class="text-lg leading-loose">
 				This class mixes two types of dance over a period of an hour. 30 minutes of ballet and 30
 				minutes of tap. Ballet and tap shoes will eventually be required as will a leotard.
@@ -118,7 +121,7 @@ import flip_img from '$src/assets/imgs/acrowithmyback.jpg';
 			title="Jazz"
 			subtitle="Age 7 or 2nd Grade & Up"
 		>
-			<p class="font-bold text-pink-600 mb-3">$13.00 For An Hour Class OR $49 a Month</p>
+			<p class="font-bold text-pink-600 mb-3">${prices.hour_class_per_class} For An Hour Class OR ${prices.hour_class_per_month} a Month</p>
 			<p class="text-lg leading-loose">
 				This class will teach a mixture of traditional jazz and the latest in hip hop steps. This is
 				an ideal class for anyone who wants to learn the foundation for most modern dances. A
@@ -132,7 +135,7 @@ import flip_img from '$src/assets/imgs/acrowithmyback.jpg';
 			title="Acro"
 			subtitle="Age 7 or 2nd Grade & Up"
 		>
-			<p class="font-bold text-pink-600 mb-3">$13.00 For An Hour Class OR $49 a Month</p>
+			<p class="font-bold text-pink-600 mb-3">${prices.hour_class_per_class} For An Hour Class OR ${prices.hour_class_per_month} a Month</p>
 			<p class="text-lg leading-loose">
 				This class is all floor tumbling. Most of the focus is on both power tumbling (round-offs,
 				back handsprings, back tucks, etc.) and contortion work (splits, baskets, straddles, etc.).

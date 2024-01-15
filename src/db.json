@@ -3,25 +3,31 @@
 		"year": "2023",
 		"senior_1": {
 			"start_month": "July",
-			"start_day": "17th",
+			"start_day": "17",
 			"end_month": "July",
-			"end_day": "21st"
+			"end_day": "21"
 		},
 		"senior_2": {
 			"start_month": "July",
-			"start_day": "31st",
+			"start_day": "31",
 			"end_month": "Aug",
-			"end_day": "4th"
+			"end_day": "4"
 		},
 		"junior_1": {
 			"start_month": "July",
-			"start_day": "24th",
+			"start_day": "24",
 			"end_month": "July",
-			"end_day": "28th"
+			"end_day": "28"
 		}
 	},
 	"prices": {
 		"senior_camp": 180,
-		"junior_camp": 90
+		"junior_camp": 90,
+		"hour_class_per_month": 49,
+		"hour_class_per_class": 13,
+		"gymnastics_older_per_class": 18.5,
+		"gymnastics_older_per_month": 70,
+		"gymnastics_younger_per_class": 13,
+		"gymnastics_younger_per_month": 49
 	}
 }
