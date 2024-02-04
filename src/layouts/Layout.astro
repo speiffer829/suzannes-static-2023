@@ -5,25 +5,29 @@ import { ViewTransitions } from 'astro:transitions';
 import { fade } from 'astro:transitions';
 export interface Props {
 	title?: string;
+	page_description?: string;
 }
 
-const { title = "Suzanne's Dance" } = Astro.props;
+const { title = "Suzanne's Dance", page_description = '' } = Astro.props;
+const canonical_url = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!DOCTYPE html>
 <html lang="en" transition:animate={fade({ duration: '400ms' })}>
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Suzanne's Dance & Gymnastics School" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
 		<link rel="manifest" href="/favicon/site.webmanifest">
-		<meta name="msapplication-TileColor" content="rgb(253, 242, 248)" />
+		<meta name="msapplication-TileColor" content="#fdf2f8" />
 		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
-		<meta name="theme-color" content="rgb(253, 242, 248)" />
+		<meta name="theme-color" content="#fdf2f8" />
 		<meta name="generator" content={Astro.generator} />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		{!!canonical_url && <link rel="canonical" href={canonical_url} />}
+		{!!page_description && <meta name="description" content={page_description}>}
 		<title>{title === "Suzanne's Dance" ? "Suzanne's Dance" : `${title} | Suzanne's Dance`}</title>
 		
 	</head>

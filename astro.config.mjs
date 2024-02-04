@@ -6,7 +6,10 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'http://meantime.spenserpeiffer.com',
+	site: import.meta.env.PROD ? 'http://meantime.spenserpeiffer.com' : 'http://localhost:4321',
 	integrations: [tailwind(), sitemap(), mdx()],
-	build: {}
+	build: {},
+	devToolbar: {
+		enabled: false
+	}
 });

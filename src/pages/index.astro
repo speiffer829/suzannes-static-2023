@@ -10,9 +10,11 @@ import map_img from '$src/assets/imgs/map.webp';
 import jazz_img from '$src/assets/imgs/jazz.jpg';
 
 const maybe_merch = await getImage({ src: maybe_merch_img, format: 'webp', width: 700 });
+
+const page_description = 'Suzanne\'s Dance & Gymnastics is a family owned and operated business. We offer a variety of dance and gymnastics classes for all ages and skill levels.';
 ---
 
-<Layout>
+<Layout {page_description}>
 	<header style="--bg-img: url('/imgs/holding.webp')" class="bg-pink-50">
 		<div class="wrapper">
 			<Picture
