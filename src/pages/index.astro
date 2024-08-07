@@ -15,7 +15,7 @@ const page_description = 'Suzanne\'s Dance & Gymnastics is a family owned and op
 ---
 
 <Layout {page_description}>
-	<header style="--bg-img: url('/imgs/holding.webp')" class="bg-pink-50">
+	<section aria-label="Hero" class="hero">
 		<div class="wrapper">
 			<Picture
 				src={holding_img}
@@ -26,7 +26,7 @@ const page_description = 'Suzanne\'s Dance & Gymnastics is a family owned and op
 				loading="eager"
 			/>
 		</div>
-	</header>
+	</section>
 
 	<main class="grid md:grid-cols-12 gap-6 py-6 wrapper">
 		<article id="class" class="card md:col-span-6 flex flex-col">
@@ -255,5 +255,14 @@ const page_description = 'Suzanne\'s Dance & Gymnastics is a family owned and op
 				}
 			}
 		}
+	}
+	
+</style>
+
+<style>
+	section.hero{
+		padding-top: 120px;
+		background-image: linear-gradient(to bottom, theme('colors.pink.200'), theme('colors.pink.50') 80%);
+		background-attachment: unset;
 	}
 </style>

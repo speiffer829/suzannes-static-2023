@@ -76,7 +76,6 @@
 	body {
 		font-family: theme('fontFamily.primary');
 		min-height: 100dvh;
-		padding-top: 120px;
 	}
 
 	.no-scroll {
@@ -154,11 +153,11 @@
 			var(--bg-img) center no-repeat;
 		background-blend-mode: color;
 		background-size: cover;
-		min-height: 50vh;
+		/* min-height: 50vh; */
 		width: 100%;
 
 		@screen lg {
-			min-height: 70vh;
+			/* min-height: 70vh; */
 			background-attachment: fixed;
 		}
 	}
