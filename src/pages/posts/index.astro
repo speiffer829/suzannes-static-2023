@@ -2,11 +2,12 @@
 import Layout from '$src/layouts/Layout.astro';
 import { Image, Picture } from 'astro:assets';
 import { getCollection } from 'astro:content';
+import fosse_img from '$src/assets/imgs/fosse.jpg';
+
 const blog_entries = await getCollection('posts', ({ data }) => {
   return data.draft !== true;
 });;
 
-import fosse_img from '$src/assets/imgs/fosse.jpg';
 ---
 
 <Layout title="Blog">
@@ -32,18 +33,17 @@ import fosse_img from '$src/assets/imgs/fosse.jpg';
 		<main>
 			<ul class="max-w-3xl mx-auto my-14">
 				{
-					blog_entries.map((entry) => (
+					blog_entries.map((entry) => {
+						const featuredImg = entry.data.featured_img;
+						return (
 						<li class="">
 							<a href={`/posts/${entry.slug}`} class="my-5 bg-white shadow-lg rounded-xl p-5 xs:flex gap-5 group">
-								{(entry.data.featured_img as ImageMetadata) && (
+								{featuredImg && (
 									<Picture
-										src={entry.data.featured_img}
-										formats={['avif', 'webp']}
-										widths={[300, 400, 650, 2000]}
+										src={featuredImg as typeof fosse_img}
 										alt={entry.data.title}
 										class="rounded-xl aspect-square object-cover w-32"
-										loading="eager"
-									/>
+										loading="eager" />
 								)}
 								<div class="grid items-start content-start">
 									<h2 class="font-fancy font-bold text-3xl">{entry.data.title}</h2>
@@ -75,7 +75,8 @@ import fosse_img from '$src/assets/imgs/fosse.jpg';
 								</div>
 							</a>
 						</li>
-					))
+						);
+					})
 				}
 			</ul>
 		</main>

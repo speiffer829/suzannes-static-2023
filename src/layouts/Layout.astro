@@ -29,6 +29,87 @@ const canonical_url = new URL(Astro.url.pathname, Astro.site);
 		{!!canonical_url && <link rel="canonical" href={canonical_url} />}
 		{!!page_description && <meta name="description" content={page_description}>}
 		<title>{title === "Suzanne's Dance" ? "Suzanne's Dance" : `${title} | Suzanne's Dance`}</title>
+
+		<style>
+			{/* Critical CSS */}
+			@font-face {
+				font-family: 'moranga';
+				src: url('/fonts/moranga-bold.woff2') format('woff2');
+				font-weight: bold;
+				font-style: normal;
+				font-display: swap;
+			}
+			@font-face {
+				font-family: 'moranga';
+				src: url('/fonts/moranga-bold-italic.woff2') format('woff2');
+				font-weight: bold;
+				font-style: italic;
+				font-display: swap;
+			}
+			@font-face {
+				font-family: 'moranga';
+				src: url('/fonts/moranga-black-italic.woff2') format('woff2');
+				font-weight: 900;
+				font-style: italic;
+				font-display: swap;
+			}
+			@font-face {
+				font-family: 'moranga';
+				src: url('/fonts/moranga-black.woff2') format('woff2');
+				font-weight: 900;
+				font-style: normal;
+				font-display: swap;
+			}
+			@font-face {
+				font-family: 'Poppins';
+				src: url('/fonts/Poppins-Bold.woff2') format('woff2');
+				font-weight: bold;
+				font-style: normal;
+				font-display: swap;
+			}
+			@font-face {
+				font-family: 'Poppins';
+				src: url('/fonts/Poppins-BoldItalic.woff2') format('woff2');
+				font-weight: bold;
+				font-style: italic;
+				font-display: swap;
+			}
+			@font-face {
+				font-family: 'Poppins';
+				src: url('/fonts/Poppins-MediumItalic.woff2') format('woff2');
+				font-weight: medium;
+				font-style: italic;
+				font-display: swap;
+			}
+			@font-face {
+				font-family: 'Poppins';
+				src: url('/fonts/Poppins-Medium.woff2') format('woff2');
+				font-weight: medium;
+				font-style: normal;
+				font-display: swap;
+			}
+			@font-face {
+				font-family: 'Barlow Condensed';
+				src: url('/fonts/BarlowCondensed-Regular.woff2') format('woff2');
+				font-weight: 400;
+				font-style: normal;
+				font-display: swap;
+			}
+
+			body{
+				font-family: theme('fontFamily.primary');
+			}
+
+			nav{
+				font-family: theme('fontFamily.fancy');
+			}
+
+			img {
+				width: max(auto, 100%);
+				display: block;
+				background: linear-gradient(to bottom right, theme('colors.pink.200'), theme('colors.sky.200'));
+			}
+		</style>
 		
 	</head>
 	<body class="bg-pink-50">

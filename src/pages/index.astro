@@ -2,6 +2,8 @@
 import CampCards from '$src/components/CampCards.astro';
 import Layout from '$src/layouts/Layout.astro';
 import { Image, Picture, getImage } from 'astro:assets';
+import campheader_img from '$src/assets/imgs/campheader.jpg';
+
 
 import holding_img from '$src/assets/imgs/holding.webp';
 import multibarhang_img from '$src/assets/imgs/multibarhang.webp';
@@ -45,6 +47,9 @@ const page_description = 'Suzanne\'s Dance & Gymnastics is a family owned and op
 
 			<div class="p-4 text-center flex flex-[2] flex-col justify-center py-8 px-4">
 				<h3 class="text-4xl font-black font-fancy">Classes</h3>
+				<p>
+					We have a variety of dance and gymnastics classes for all ages and skill levels.
+				</p>
 				<a
 					href="/classes"
 					title="Learn More About Available Classes."
@@ -68,15 +73,39 @@ const page_description = 'Suzanne\'s Dance & Gymnastics is a family owned and op
 			</div>
 
 			<div class="p-4 text-center flex flex-[2] flex-col justify-center py-8 px-4">
-				<h3 class="text-4xl font-black font-fancy">Jumpin' Jitney</h3>
+				<h3 class="text-4xl font-black font-fancy">Camps</h3>
+				<p>
+					Suzanne's has day camps for most ages!
+				</p>
 				<a
-					href="/jumpin-jitney"
-					title="Learn More About The Jumpin' Jitney."
+					href="/camp"
+					title="Learn More About Suzanne's Camps."
 					class="btn mx-auto bg-sky-500 hover:bg-sky-100 hover:text-sky-600 border-sky-500 mt-6 flex items-center gap-2"
 					>Learn More
 				</a>
 			</div>
 		</article>
+
+		<!-- <article class="card col-span-full md:flex">
+			<div
+				class="after:content-[''] relative after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-gradient-to-br from-yellow-200/50 to-sky-500/50 after:bg-blend-multiply"
+			>
+			<Picture
+					formats={['avif', 'webp']}
+					width={750}
+					quality={100}
+					class="w-full object-cover object-center h-80 grayscale"
+					src={campheader_img}
+					alt="Kids hanging on a bar"
+					loading="lazy"
+				/>
+			</div>
+			<div class="p-4 md:p-8">
+				<h2 class="text-4xl font-black font-fancy">
+					Suzanne's Has Camps Too!
+				</h2>
+			</div>
+		</article> -->
 
 		<article
 			class="card col-span-full px-4 py-6 md:flex justify-between items-center bg-gradient-to-b from-violet-200 to-violet-100 flex-wrap"
@@ -90,7 +119,7 @@ const page_description = 'Suzanne\'s Dance & Gymnastics is a family owned and op
 			<a
 				href="/parties"
 				class="btn bg-purple-400 border-purple-400 hover:bg-purple-100 hover:text-purple-600 mt-5 mx-auto md:m-0"
-				title="Learn More About Parties at Suzanne's.">Learn More</a
+				title="Learn More About Camps at Suzanne's.">Learn More</a
 			>
 		</article>
 
@@ -260,9 +289,13 @@ const page_description = 'Suzanne\'s Dance & Gymnastics is a family owned and op
 </style>
 
 <style>
+	/* TODO try to do radial gradient design  */
+	body{
+		background-image: linear-gradient(to bottom, theme('colors.pink.100'), theme('colors.purple.100'), theme('colors.sky.100'), theme('colors.pink.50'));
+	}
 	section.hero{
 		padding-top: 120px;
-		background-image: linear-gradient(to bottom, theme('colors.pink.200'), theme('colors.pink.50') 80%);
+		
 		background-attachment: unset;
 	}
 </style>
