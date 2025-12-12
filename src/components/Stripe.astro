@@ -10,9 +10,11 @@ interface PropsType {
 	class?: string;
 }
 const { img_side = 'left', img, img_alt, title, subtitle, class: className = '' }: PropsType = Astro.props;
+
+const string_id = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 ---
 
-<div class="stripe py-24" class:list={[img_side, className]}>
+<section class="stripe py-24" class:list={[img_side, className]} aria-labelledby={string_id}>
 	<div
 		class="wrapper grid justify-center lg:grid-cols-2 grid-flow-dense gap-10 lg:gap-20 items-center"
 	>
@@ -24,14 +26,15 @@ const { img_side = 'left', img, img_alt, title, subtitle, class: className = '' 
 			)
 		}
 		<div class="@container">
-			<header class="mb-6">
+			<div class="mb-6">
 				<h2
+					id={string_id}
 					class="text-3xl @md:text-4xl @lg:text-5xl italic gradient_text bg-gradient-to-t to-pink-500 from-rose-300 text-pink-500 font-fancy font-black w-fit p-1"
 				>
 					{title}
 				</h2>
 				{subtitle && <p class=" mt-2 text-xl text-pink-500 ">{subtitle}</p>}
-			</header>
+			</div>
 			<slot />
 		</div>
 		{
@@ -42,7 +45,7 @@ const { img_side = 'left', img, img_alt, title, subtitle, class: className = '' 
 			)
 		}
 	</div>
-</div>
+</section>
 
 <style>
 	.stripe {

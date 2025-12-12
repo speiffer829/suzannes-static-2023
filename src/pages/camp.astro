@@ -16,23 +16,24 @@ const { prices } = db;
 ---
 
 <Layout title="Camp">
-	<header class="wrapper">
-		<Picture
-			src={campheader_img}
-			formats={['avif', 'webp']}
-			widths={[300, 400, 650, 2000]}
-			alt="Kids hanging on a bar"
-			class="hero_img"
-			loading="eager"
-		/>
-
-		<h1 class="gradient_text bg-gradient-to-r from-sky-500 to-emerald-500 page_title">Camp</h1>
-	</header>
+	<section class="hero" aria-label="Hero">
+		<div class="wrapper">
+			<Picture
+				src={campheader_img}
+				formats={['avif', 'webp']}
+				widths={[300, 400, 650, 2000]}
+				alt="Kids hanging on a bar"
+				class="hero_img"
+				loading="eager"
+			/>
+			<h1 class="gradient_text bg-gradient-to-r from-sky-500 to-emerald-500 page_title">Camp</h1>
+		</div>
+	</section>
 
 	<main>
-		<div class="grid lg:grid-cols-3 gap-7 my-16 wrapper">
+		<section aria-label="Camp Dates" class="grid lg:grid-cols-3 gap-7 my-16 wrapper">
 			<CampCards show_btns={false} />
-		</div>
+		</section>
 
 		<Stripe
 			img={raven_img}
@@ -97,3 +98,12 @@ const { prices } = db;
 		</Stripe>
 	</main>
 </Layout>
+
+
+<style>
+	section.hero{
+		padding-top: 120px;
+		background-image: linear-gradient(to bottom, theme('colors.sky.200'), theme('colors.pink.50') 80%);
+		background-attachment: unset;
+	}
+</style>

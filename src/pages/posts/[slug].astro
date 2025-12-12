@@ -15,7 +15,7 @@ const { Content } = await entry.render();
 
 <Layout title={entry.data.title}>
 	<article class=" ">
-		<header class="mb-7 content_wrapper">
+		<section aria-label="Hero" class="mb-7 content_wrapper pt-32">
 			<a href="/posts" class="back_btn" title="Back To Posts">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +35,7 @@ const { Content } = await entry.render();
 			{
 				entry.data.featured_img && (
 					<Image
-						src={entry.data.featured_img}
+						src={entry.data.featured_img as ImageMetadata}
 						alt={entry.data.title}
 						width={960}
 						class="mt-0 mb-9 aspect-video object-cover breakout hero_img"
@@ -58,7 +58,7 @@ const { Content } = await entry.render();
 					{entry.data.title}
 				</h1>
 			</div>
-		</header>
+		</section>
 		<main class="content_wrapper blog_wrapper pb-12 lg:pb-0">
 			<Content />
 		</main>

@@ -12,24 +12,25 @@ import tramp_img from '$src/assets/imgs/tramp.jpg';
 ---
 
 <Layout title="Jumpin' Jitney">
-	<header class="wrapper">
-		<Picture
-			src={multibarhang_img}
-			formats={['avif', 'webp']}
-			widths={[300, 400, 650, 2000]}
-			alt="Kids hanging on a bar"
-			class="hero_img"
-			loading="eager"
-			transition:name="bus_header"
-		/>
-
-		<h1
-			class="page_title gradient_text bg-gradient-to-r from-pink-500 via-violet-400 to-sky-500 mb-16"
-			transition:name="bus_header_text"
-		>
-			Jumpin' Jitney
-		</h1>
-	</header>
+	<section aria-label="Hero" class="hero">
+		<div class="wrapper">
+			<Picture
+				src={multibarhang_img}
+				formats={['avif', 'webp']}
+				widths={[300, 400, 650, 2000]}
+				alt="Kids hanging on a bar"
+				class="hero_img"
+				loading="eager"
+				transition:name="bus_header"
+			/>
+			<h1
+				class="page_title gradient_text bg-gradient-to-r from-pink-500 via-violet-400 to-sky-500 mb-16"
+				transition:name="bus_header_text"
+			>
+				Jumpin' Jitney
+			</h1>
+		</div>
+	</section>
 
 	<main>
 		<Stripe
@@ -134,3 +135,11 @@ import tramp_img from '$src/assets/imgs/tramp.jpg';
 		</div>
 	</div>
 </Layout>
+
+<style>
+	section.hero{
+		padding-top: 120px;
+		background-image: linear-gradient(to bottom, theme('colors.blue.200'), theme('colors.pink.50') 80%);
+		background-attachment: unset;
+	}
+</style>

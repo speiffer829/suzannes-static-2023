@@ -15,29 +15,30 @@ import realdanceacro_img from '$src/assets/imgs/realdanceacro.jpg';
 import ballet_img from '$src/assets/imgs/ballet.jpg';
 import flip_img from '$src/assets/imgs/acrowithmyback.jpg';
 
-
+const page_description = 'Suzanne’s Dance offers a variety of dance and gymnastics classes for children of all ages. From Bouncin’ Bunnies to Jazz, we have something for everyone.';
 
 ---
 
-<Layout title="Classes">
-	<header class="wrapper">
-		<Picture
-			src={jazz_img}
-			formats={['avif', 'webp']}
-			widths={[300, 400, 650, 2000]}
-			alt="Girls laughing and having fun."
-			class="hero_img"
-			loading="eager"
-			transition:name="classes_header"
-		/>
-
-		<h1
-			class="page_title gradient_text bg-gradient-to-br from-pink-500 to-rose-300 mb-16"
-			transition:name="classes_header_text"
-		>
-			Classes
-		</h1>
-	</header>
+<Layout title="Classes" {page_description}>
+	<section class="hero" aria-label="Hero">
+		<div class="wrapper">
+			<Picture
+				src={jazz_img}
+				formats={['avif', 'webp']}
+				widths={[300, 400, 650, 2000]}
+				alt="Girls laughing and having fun."
+				class="hero_img"
+				loading="eager"
+				transition:name="classes_header"
+			/>
+			<h1
+				class="page_title gradient_text bg-gradient-to-br from-pink-500 to-rose-300 mb-16"
+				transition:name="classes_header_text"
+			>
+				Classes
+			</h1>
+		</div>
+	</section>
 	<main>
 		<Stripe
 			img={bunnies_img}
@@ -159,7 +160,7 @@ import flip_img from '$src/assets/imgs/acrowithmyback.jpg';
 				<a
 					href="/registration-2022-2023.pdf"
 					target="_blank"
-					title="Download Sign Up Sheet"
+					rel="noopener"
 					class="btn mt-5 mx-auto md:m-0"
 					title="Learn More About Parties at Suzanne's.">Download Sign Up Sheet</a
 				>
@@ -167,3 +168,11 @@ import flip_img from '$src/assets/imgs/acrowithmyback.jpg';
 		</div>
 	</main>
 </Layout>
+
+<style>
+	section.hero{
+		padding-top: 120px;
+		background-image: linear-gradient(to bottom, theme('colors.pink.200'), theme('colors.pink.50') 80%);
+		background-attachment: unset;
+	}
+</style>

@@ -9,37 +9,40 @@ import vollyball_img from '$src/assets/imgs/vollyball.jpg';
 ---
 
 <Layout title="Parties">
-	<header class="wrapper">
-		<Picture
-			src={partyheader_img}
-			formats={['avif', 'webp']}
-			widths={[300, 400, 650, 2000]}
-			alt="Kids hanging on a bar"
-			class="hero_img"
-			loading="eager"
-		/>
-
-		<h1 class="page_title gradient_text bg-gradient-to-br from-indigo-400 to-rose-500 mb-16">Parties</h1>
-	</header>
-
-	<Stripe
-		title="Party At Suzanne's"
-		subtitle="2 Hours For $120"
-		img={underpara_img}
-		img_alt="Kids under parachute"
-		class="pt-0"
-	>
-		<p class="text-lg leading-loose">
-			An additional instructor is available for <strong class="font-bold text-pink-600">$20</strong
-			>. One hour of supervised instruction including games, activities, and races geared to both
-			boys and girls. Forty-five minutes in the reception area for food, gifts, and other activities
-			provided by you. Then, if time allows, fifteen minutes of free time in the gym. The best part
-			is there's no mess at your house or lingering guests. Call <a
-				href="tel:7172722159"
-				class="underline text-pink-600">717-272-2159</a
-			> to reserve your time today!
-		</p>
-	</Stripe>
+	<section aria-label="Hero" class="hero">
+		<div class="wrapper">
+			<Picture
+				src={partyheader_img}
+				formats={['avif', 'webp']}
+				widths={[300, 400, 650, 2000]}
+				alt="Kids hanging on a bar"
+				class="hero_img"
+				loading="eager"
+			/>
+			<h1 class="page_title gradient_text bg-gradient-to-br from-indigo-400 to-rose-500 mb-16">Parties</h1>
+		</div>
+	</section>
+<main>
+	
+		<Stripe
+			title="Party At Suzanne's"
+			subtitle="2 Hours For $120"
+			img={underpara_img}
+			img_alt="Kids under parachute"
+			class="pt-0"
+		>
+			<p class="text-lg leading-loose">
+				An additional instructor is available for <strong class="font-bold text-pink-600">$20</strong
+				>. One hour of supervised instruction including games, activities, and races geared to both
+				boys and girls. Forty-five minutes in the reception area for food, gifts, and other activities
+				provided by you. Then, if time allows, fifteen minutes of free time in the gym. The best part
+				is there's no mess at your house or lingering guests. Call <a
+					href="tel:7172722159"
+					class="underline text-pink-600">717-272-2159</a
+				> to reserve your time today!
+			</p>
+		</Stripe>
+</main>
 
 	<!-- <Stripe
 		title="Party On The Jumpin' Jitney"
@@ -61,3 +64,11 @@ import vollyball_img from '$src/assets/imgs/vollyball.jpg';
 		</p>
 	</Stripe> -->
 </Layout>
+
+<style>
+	section.hero{
+		padding-top: 120px;
+		background-image: linear-gradient(to bottom, theme('colors.rose.200'), theme('colors.pink.50') 80%);
+		background-attachment: unset;
+	}
+</style>

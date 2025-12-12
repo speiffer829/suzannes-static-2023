@@ -8,9 +8,7 @@ const posts_collection = defineCollection({
 			date: z.string(),
 			updated: z.string().optional(),
 			description: z.string().optional(),
-			featured_img: image().refine((img) => img.width >= 600, {
-				message: 'Image width must be at least 600px'
-			})
+			featured_img: image()
 		})
 });
 
