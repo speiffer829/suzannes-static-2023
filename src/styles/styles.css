@@ -1,80 +1,118 @@
-@font-face {
-	font-family: 'moranga';
-	src: url('/fonts/moranga-bold.woff2') format('woff2');
-	font-weight: bold;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'moranga';
-	src: url('/fonts/moranga-bold-italic.woff2') format('woff2');
-	font-weight: bold;
-	font-style: italic;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'moranga';
-	src: url('/fonts/moranga-black-italic.woff2') format('woff2');
-	font-weight: 900;
-	font-style: italic;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'moranga';
-	src: url('/fonts/moranga-black.woff2') format('woff2');
-	font-weight: 900;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Poppins';
-	src: url('/fonts/Poppins-Bold.woff2') format('woff2');
-	font-weight: bold;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Poppins';
-	src: url('/fonts/Poppins-BoldItalic.woff2') format('woff2');
-	font-weight: bold;
-	font-style: italic;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Poppins';
-	src: url('/fonts/Poppins-MediumItalic.woff2') format('woff2');
-	font-weight: medium;
-	font-style: italic;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Poppins';
-	src: url('/fonts/Poppins-Medium.woff2') format('woff2');
-	font-weight: medium;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Barlow Condensed';
-	src: url('/fonts/BarlowCondensed-Regular.woff2') format('woff2');
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/container-queries';
+
+@theme {
+	--breakpoint-*: initial;
+	--breakpoint-xs: 350px;
+	--breakpoint-sm: 640px;
+	--breakpoint-md: 768px;
+	--breakpoint-lg: 1024px;
+	--breakpoint-xl: 1280px;
+	--breakpoint-2xl: 1536px;
+
+	--font-primary: Poppins, sans-serif;
+	--font-condensed:
+		Barlow Condensed, Roboto Condensed, Bahnschrift, DIN Alternate, Franklin Gothic Medium,
+		Nimbus Sans Narrow, sans-serif-condensed, sans-serif;
+	--font-fancy: moranga, serif;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
 
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--color-gray-200, currentcolor);
+	}
+}
+
+@layer base {
+	@font-face {
+		font-family: 'moranga';
+		src: url('/fonts/moranga-bold.woff2') format('woff2');
+		font-weight: bold;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'moranga';
+		src: url('/fonts/moranga-bold-italic.woff2') format('woff2');
+		font-weight: bold;
+		font-style: italic;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'moranga';
+		src: url('/fonts/moranga-black-italic.woff2') format('woff2');
+		font-weight: 900;
+		font-style: italic;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'moranga';
+		src: url('/fonts/moranga-black.woff2') format('woff2');
+		font-weight: 900;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Poppins';
+		src: url('/fonts/Poppins-Bold.woff2') format('woff2');
+		font-weight: bold;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Poppins';
+		src: url('/fonts/Poppins-BoldItalic.woff2') format('woff2');
+		font-weight: bold;
+		font-style: italic;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Poppins';
+		src: url('/fonts/Poppins-MediumItalic.woff2') format('woff2');
+		font-weight: medium;
+		font-style: italic;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Poppins';
+		src: url('/fonts/Poppins-Medium.woff2') format('woff2');
+		font-weight: medium;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Barlow Condensed';
+		src: url('/fonts/BarlowCondensed-Regular.woff2') format('woff2');
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+	}
+}
+
+@layer utilities {
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
 }
 
 @layer base {
 	body {
-		font-family: theme('fontFamily.primary');
+		font-family: var(--font-primary);
 		min-height: 100dvh;
 	}
 
@@ -84,7 +122,7 @@
 		width: 100%;
 		height: 100%;
 
-		@screen xl {
+		@media (width > var(--breakpoint-xl)) {
 			overflow: auto;
 			position: static;
 			width: auto;
@@ -95,20 +133,20 @@
 	img {
 		width: max(auto, 100%);
 		display: block;
-		background: linear-gradient(to bottom right, theme('colors.pink.200'), theme('colors.sky.200'));
+		background: linear-gradient(to bottom right, var(--color-pink-200), var(--color-sky-200));
 	}
 
 	.wrapper {
 		max-width: theme('maxWidth.screen-2xl');
 		margin: 0 auto;
-		padding: 0 theme('spacing.2');
+		padding: 0 --spacing(2);
 
 		@media (min-width: 350px) {
-			padding: 0 theme('spacing.4');
+			padding: 0 --spacing(4);
 		}
 
-		@screen sm {
-			padding: 0 theme('spacing.8');
+		@media (width > theme(--breakpoint-sm)) {
+			padding: 0 --spacing(8);
 		}
 	}
 
@@ -148,42 +186,43 @@
 	}
 
 	.hero {
-		background-color: theme('colors.pink.500');
-		background: linear-gradient(to bottom right, theme('colors.pink.500'), theme('colors.sky.600')),
+		background-color: var(--color-pink-500);
+		background:
+			linear-gradient(to bottom right, var(--color-pink-500), var(--color-sky-600)),
 			var(--bg-img) center no-repeat;
 		background-blend-mode: color;
 		background-size: cover;
 		/* min-height: 50vh; */
 		width: 100%;
 
-		@screen lg {
+		@media (width > theme(--breakpoint-lg)) {
 			/* min-height: 70vh; */
 			background-attachment: fixed;
 		}
 	}
 
 	.btn {
-		background-color: theme('colors.pink.500');
-		color: theme('colors.white');
-		padding: theme('spacing.3') theme('spacing.10');
+		background-color: var(--color-pink-500);
+		color: var(--color-white);
+		padding: --spacing(3) --spacing(10);
 		border-radius: theme('borderRadius.full');
 		transition: all 3ms ease-in-out;
 		display: flex;
 		width: fit-content;
-		border: 2px solid theme('colors.pink.500');
+		border: 2px solid var(--color-pink-500);
 		text-align: center;
 		transition: all 250ms ease-in-out;
 
 		&:hover {
-			background-color: theme('colors.pink.100');
-			color: theme('colors.pink.600');
+			background-color: var(--color-pink-100);
+			color: var(--color-pink-600);
 		}
 	}
 
 	.card {
 		background: white;
-		box-shadow: theme('boxShadow.lg');
-		border-radius: theme('borderRadius.xl');
+		box-shadow: var(--shadow-lg);
+		border-radius: var(--radius-xl);
 		overflow: hidden;
 	}
 
@@ -192,38 +231,38 @@
 		-webkit-text-fill-color: transparent;
 
 		&::selection {
-			background-color: theme('colors.rose.500');
-			color: theme('colors.white');
+			background-color: var(--color-rose-500);
+			color: var(--color-white);
 			-webkit-text-fill-color: initial;
 			-webkit-background-clip: initial;
 		}
 	}
 
 	.stripe:nth-child(even) {
-		background-color: theme('colors.pink.100');
+		background-color: var(--color-pink-100);
 	}
 
 	.hero_img {
 		width: 100%;
 		margin: 0 auto;
-		border-radius: theme('borderRadius.xl');
-		box-shadow: theme('boxShadow.lg');
+		border-radius: var(--radius-xl);
+		box-shadow: var(--shadow-lg);
 		aspect-ratio: 1/1;
 		object-fit: cover;
 
-		@screen sm {
+		@media (width > theme(--breakpoint-sm)) {
 			aspect-ratio: 16/9;
 		}
-		@screen lg {
+		@media (width > theme(--breakpoint-lg)) {
 			aspect-ratio: 16/6;
 		}
 	}
 
 	.input {
-		font-size: theme('fontSize.base');
+		font-size: var(--text-base);
 
-		@screen sm {
-			font-size: theme('fontSize.lg');
+		@media (width > theme(--breakpoint-sm)) {
+			font-size: var(--text-lg);
 		}
 
 		label,
@@ -233,78 +272,77 @@
 		}
 
 		label {
-			font-weight: theme('fontWeight.bold');
-			margin-bottom: theme('spacing.1');
+			font-weight: var(--font-weight-bold);
+			margin-bottom: --spacing(1);
 		}
 
 		input,
 		textarea {
-			padding: theme('spacing.3') theme('spacing.3');
+			padding: --spacing(3) --spacing(3);
 			display: block;
 			width: 100%;
-			border-radius: theme('borderRadius.lg');
+			border-radius: var(--radius-lg);
 			outline: none;
-			color: theme('colors.gray.800');
+			color: var(--color-gray-800);
 
 			&:focus,
 			&:active {
-				outline: solid 2px theme('colors.pink.500');
+				outline: solid 2px var(--color-pink-500);
 			}
 		}
 	}
 
 	.page_title {
-		font-family: theme('fontFamily.fancy');
+		font-family: var(--font-fancy);
 		font-weight: 700;
-		font-size: theme('fontSize.4xl');
+		font-size: var(--text-4xl);
 		text-align: center;
-		padding-top: theme('spacing.10');
+		padding-top: --spacing(10);
 		width: fit-content;
 		margin: 0 auto;
 
-		@screen xs {
-			font-size: theme('fontSize.6xl');
+		@media (width > theme(--breakpoint-xs)) {
+			font-size: var(--text-6xl);
 		}
-		@screen lg {
-			font-size: theme('fontSize.7xl');
+		@media (width > theme(--breakpoint-lg)) {
+			font-size: var(--text-7xl);
 		}
 	}
 
 	.spray_gradient {
-		background: radial-gradient(
-				circle at top left,
-				theme('colors.amber.500') 0.3ch,
-				transparent 2ch
-			),
-			radial-gradient(circle at bottom right, theme('colors.rose.400') 0.3ch, transparent 3ch),
-			theme('colors.pink.500');
+		background:
+			radial-gradient(circle at top left, var(--color-amber-500) 0.3ch, transparent 2ch),
+			radial-gradient(circle at bottom right, var(--color-rose-400) 0.3ch, transparent 3ch),
+			var(--color-pink-500);
 
 		background-repeat: no-repeat;
 		background-clip: text;
-		color: theme('colors.pink.500');
+		color: var(--color-pink-500);
 		font-weight: bold;
 	}
 	.spray_gradient2 {
-		background: radial-gradient(circle at top left, theme('colors.rose.400') 0.3ch, transparent 2ch),
-			radial-gradient(circle at bottom right, theme('colors.rose.400') 0.5ch, transparent 3ch),
-			theme('colors.pink.500');
+		background:
+			radial-gradient(circle at top left, var(--color-rose-400) 0.3ch, transparent 2ch),
+			radial-gradient(circle at bottom right, var(--color-rose-400) 0.5ch, transparent 3ch),
+			var(--color-pink-500);
 
 		background-repeat: no-repeat;
 		background-clip: text;
-		color: theme('colors.pink.500');
+		color: var(--color-pink-500);
 		font-weight: bold;
 	}
 
 	.contact_gradient {
-		background: radial-gradient(circle at top left, theme('colors.amber.100'), transparent),
-			radial-gradient(circle at bottom right, theme('colors.cyan.100'), transparent),
-			theme('colors.pink.500');
-		box-shadow: theme('boxShadow.lg');
-		border-radius: theme('borderRadius.xl');
+		background:
+			radial-gradient(circle at top left, var(--color-amber-100), transparent),
+			radial-gradient(circle at bottom right, var(--color-cyan-100), transparent),
+			var(--color-pink-500);
+		box-shadow: var(--shadow-lg);
+		border-radius: var(--radius-xl);
 	}
 }
 
 ::selection {
-	background-color: theme('colors.rose.500');
-	color: theme('colors.white');
+	background-color: var(--color-rose-500);
+	color: var(--color-white);
 }
