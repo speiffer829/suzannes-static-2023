@@ -137,7 +137,7 @@
 	}
 
 	.wrapper {
-		max-width: theme('maxWidth.screen-2xl');
+		max-width: var(--content-max-width);
 		margin: 0 auto;
 		padding: 0 --spacing(2);
 

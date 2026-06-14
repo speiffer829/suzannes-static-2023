@@ -144,7 +144,7 @@ const { Content } = await entry.render();
 	.back_btn{
 		position: fixed;
 		bottom: 3rem;
-		left: max(((100vw - theme('maxWidth.screen-2xl')) / 2) * 1, 1rem);
+		left: max(((100vw - var(--content-max-width)) / 2) * 1, 1rem);
 		background-color: theme('colors.pink.600');
 		color: white;
 		width: 3rem;
